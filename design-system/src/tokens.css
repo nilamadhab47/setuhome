@@ -1,0 +1,67 @@
+/* Sacred Editorial, from the SetuHome Stitch project.
+   Port these names into the Expo theme when the app starts. */
+
+:root,
+[data-theme="light"] {
+  --bg: #fbf6ee;
+  --bg-studio: #f3eadc;
+  --surface: #ffffff;
+  --surface-sunk: #f8f3eb;
+  --ink: #1e1b3a;
+  --ink-soft: #6b6577;
+  --ink-faint: #8a8496;
+  --line: #eadfcf;
+  --accent: #e8a33d;
+  --accent-press: #c9841f;
+  --accent-soft: #ffddb5;
+  --vermilion: #b5462f;
+  --on-accent: #1e1b3a;
+  --shadow: 0 24px 60px rgba(30, 27, 58, 0.12);
+  --card-shadow: 0 6px 24px -4px rgba(30, 27, 58, 0.07);
+  --tab: rgba(255, 255, 255, 0.92);
+  --focus: #1e1b3a;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #16142a;
+  --bg-studio: #100e1c;
+  --surface: #221f38;
+  --surface-sunk: #2a2644;
+  --ink: #fbf6ee;
+  --ink-soft: #c8c0d4;
+  --ink-faint: #9a92aa;
+  --line: rgba(234, 223, 207, 0.18);
+  --accent: #e8a33d;
+  --accent-press: #ffb956;
+  --accent-soft: rgba(232, 163, 61, 0.18);
+  --vermilion: #e07a62;
+  --on-accent: #1e1b3a;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --card-shadow: 0 6px 24px -4px rgba(0, 0, 0, 0.35);
+  --tab: rgba(34, 31, 56, 0.92);
+  --focus: #e8a33d;
+  color-scheme: dark;
+}
+
+:root {
+  --font-sans: "DM Sans", "Avenir Next", sans-serif;
+  --font-serif: "EB Garamond", "Iowan Old Style", serif;
+  --font-deva: "Noto Serif Devanagari", "Noto Serif", serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 180ms;
+  --duration: 520ms;
+  --duration-slow: 760ms;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --radius-card: 22px;
+  --radius-control: 999px;
+  --hit: 48px;
+  --phone-w: 390px;
+  --phone-h: 844px;
+}

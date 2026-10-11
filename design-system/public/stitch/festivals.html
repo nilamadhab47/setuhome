@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-bright": "#fef9f1", "inverse-surface": "#32302b", "surface-dim": "#ded9d2", "inverse-on-surface": "#f5f0e8", "primary-container": "#1e1b3a", "surface-variant": "#e7e2da", "on-primary-fixed": "#1a1736", "secondary": "#835400", "on-surface-variant": "#47464d", "on-tertiary-container": "#da6148", "on-secondary-fixed-variant": "#643f00", "primary-fixed-dim": "#c7c2ea", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "error": "#ba1a1a", "background": "#fef9f1", "on-tertiary-fixed": "#3e0500", "on-surface": "#1d1c17", "on-primary-fixed-variant": "#464364", "tertiary-container": "#440600", "tertiary": "#160100", "surface-container-highest": "#e7e2da", "secondary-container": "#feb64e", "surface-container": "#f2ede5", "on-error-container": "#93000a", "tertiary-fixed": "#ffdad3", "surface-tint": "#5e5a7d", "on-tertiary": "#ffffff", "outline": "#78767e", "primary-fixed": "#e4dfff", "on-background": "#1d1c17", "surface-container-high": "#ece8e0", "secondary-fixed-dim": "#ffb956", "surface-container-low": "#f8f3eb", "primary": "#050220", "error-container": "#ffdad6", "outline-variant": "#c9c5ce", "tertiary-fixed-dim": "#ffb4a4", "on-error": "#ffffff", "on-secondary-container": "#714800", "on-primary-container": "#8782a8", "surface": "#fef9f1", "on-secondary-fixed": "#2a1800", "secondary-fixed": "#ffddb5", "on-tertiary-fixed-variant": "#852310", "on-primary": "#ffffff", "inverse-primary": "#c7c2ea" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-mobile": "0.75rem", "space-lg": "1.75rem", "space-md": "1.25rem", "gutter": "1rem", "margin-mobile": "1.25rem", "space-sm": "0.75rem", "margin": "1.5rem", "space-xs": "0.375rem", "space-xl": "2.5rem" }, "fontFamily": { "headline-lg-mobile": ["EB Garamond"], "body-sm": ["DM Sans"], "body-lg": ["DM Sans"], "headline-sm": ["EB Garamond"], "scripture-md": ["Noto Serif"], "transliteration-md": ["EB Garamond"], "headline-xl-mobile": ["EB Garamond"], "headline-xl": ["EB Garamond"], "body-md": ["DM Sans"], "label-md": ["DM Sans"], "label-sm": ["DM Sans"], "headline-lg": ["EB Garamond"], "headline-md": ["EB Garamond"], "scripture-lg": ["Noto Serif"] }, "fontSize": { "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["17px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-sm": ["19px", { "lineHeight": "26px", "fontWeight": "600" }], "scripture-md": ["18px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400" }], "transliteration-md": ["18px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-xl-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "500" }], "scripture-lg": ["22px", { "lineHeight": "34px", "letterSpacing": "0.02em", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen selection:bg-secondary-fixed selection:text-on-secondary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[24px]">flare</span><h1 class="font-headline-md text-headline-md text-primary tracking-wide">Festivals</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Diaspora Location & Header Sub-Band -->
+<section class="px-margin-mobile pt-2 pb-space-sm flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-xl-mobile text-headline-xl-mobile text-primary tracking-tight">Festivals</h2>
+<span class="text-secondary font-headline-md text-headline-md select-none">·</span>
+<span class="font-headline-sm text-headline-sm text-secondary tracking-wide">उत्सव</span>
+</div>
+<!-- City selector pill -->
+<button aria-label="Change diaspora location" class="flex items-center gap-1.5 py-1.5 px-3 bg-surface-container-low rounded-full shadow-[0_2px_8px_rgba(30,27,58,0.04)] active:scale-95 transition-transform" id="location-picker-btn">
+<span class="material-symbols-outlined text-secondary text-[16px]">location_on</span>
+<span class="font-label-md text-label-md text-primary font-medium">Edison, NJ</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[14px]">expand_more</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">schedule</span>
+<p class="font-body-sm text-body-sm italic">
+        Auspicious timings &amp; muhurats computed for North America EDT
+      </p>
+</div>
+</section>
+<!-- Horizontal Vedic / Gregorian Panchang Calendar Strip -->
+<section class="w-full pb-space-md">
+<div class="px-margin-mobile flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-primary font-semibold tracking-wider uppercase">
+        Oct – Nov 2024 · अश्विन – कार्तिक
+      </span>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-fixed/50 px-2 py-0.5 rounded-full">
+        Drik Panchang
+      </span>
+</div>
+<!-- Swipeable Date Row -->
+<div class="flex gap-2.5 overflow-x-auto px-margin-mobile no-scrollbar py-1" id="calendar-strip">
+<!-- Day 1 (Oct 28) -->
+<button class="flex flex-col items-center justify-between min-w-[50px] h-[72px] py-2 px-1 rounded-xl bg-surface-container-lowest shadow-[0_2px_12px_rgba(30,27,58,0.04)] hover:bg-surface-container transition-colors text-center relative flex-shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">MON</span>
+<span class="font-headline-sm text-headline-sm text-primary">28</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>
+</button>
+<!-- Day 2 (Oct 29 - Karwa Chauth) -->
+<button class="flex flex-col items-center justify-between min-w-[50px] h-[72px] py-2 px-1 rounded-xl bg-surface-container-lowest shadow-[0_2px_12px_rgba(30,27,58,0.04)] hover:bg-surface-container transition-colors text-center relative flex-shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">TUE</span>
+<span class="font-headline-sm text-headline-sm text-primary">29</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_6px_rgba(232,163,61,0.8)]"></span>
+</button>
+<!-- Day 3 (Oct 30) -->
+<button class="flex flex-col items-center justify-between min-w-[50px] h-[72px] py-2 px-1 rounded-xl bg-surface-container-lowest shadow-[0_2px_12px_rgba(30,27,58,0.04)] hover:bg-surface-container transition-colors text-center relative flex-shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">WED</span>
+<span class="font-headline-sm text-headline-sm text-primary">30</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>
+</button>
+<!-- Day 4 (Oct 31) -->
+<button class="flex flex-col items-center justify-between min-w-[50px] h-[72px] py-2 px-1 rounded-xl bg-surface-container-lowest shadow-[0_2px_12px_rgba(30,27,58,0.04)] hover:bg-surface-container transition-colors text-center relative flex-shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">THU</span>
+<span class="font-headline-sm text-headline-sm text-primary">31</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>
+</button>
+<!-- Day 5 (Nov 1) -->
+<button class="flex flex-col items-center justify-between min-w-[50px] h-[72px] py-2 px-1 rounded-xl bg-surface-container-lowest shadow-[0_2px_12px_rgba(30,27,58,0.04)] hover:bg-surface-container transition-colors text-center relative flex-shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">FRI</span>
+<span class="font-headline-sm text-headline-sm text-primary">1</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>
+</button>
+<!-- Day 6 (Nov 6 - Dhanteras) -->
+<button class="flex flex-col items-center justify-between min-w-[50px] h-[72px] py-2 px-1 rounded-xl bg-surface-container-lowest shadow-[0_2px_12px_rgba(30,27,58,0.04)] hover:bg-surface-container transition-colors text-center relative flex-shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">WED</span>
+<span class="font-headline-sm text-headline-sm text-primary">6</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_6px_rgba(232,163,61,0.8)]"></span>
+</button>
+<!-- Day 7 (Nov 7 - Chhoti Diwali) -->
+<button class="flex flex-col items-center justify-between min-w-[50px] h-[72px] py-2 px-1 rounded-xl bg-surface-container-lowest shadow-[0_2px_12px_rgba(30,27,58,0.04)] hover:bg-surface-container transition-colors text-center relative flex-shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">THU</span>
+<span class="font-headline-sm text-headline-sm text-primary">7</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_6px_rgba(232,163,61,0.8)]"></span>
+</button>
+<!-- Day 8 (Nov 8 - Diwali / Selected) -->
+<button class="flex flex-col items-center justify-between min-w-[52px] h-[72px] py-2 px-1 rounded-xl bg-primary-container text-on-primary shadow-[0_6px_18px_rgba(30,27,58,0.18)] relative flex-shrink-0 scale-105 transform">
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase font-semibold">SUN</span>
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold">8</span>
+<div class="flex items-center gap-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="w-1 h-1 rounded-full bg-secondary-container/70"></span>
+</div>
+</button>
+<!-- Day 9 (Nov 9 - Annakut) -->
+<button class="flex flex-col items-center justify-between min-w-[50px] h-[72px] py-2 px-1 rounded-xl bg-surface-container-lowest shadow-[0_2px_12px_rgba(30,27,58,0.04)] hover:bg-surface-container transition-colors text-center relative flex-shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">MON</span>
+<span class="font-headline-sm text-headline-sm text-primary">9</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_6px_rgba(232,163,61,0.8)]"></span>
+</button>
+<!-- Day 10 (Nov 10 - Bhai Dooj) -->
+<button class="flex flex-col items-center justify-between min-w-[50px] h-[72px] py-2 px-1 rounded-xl bg-surface-container-lowest shadow-[0_2px_12px_rgba(30,27,58,0.04)] hover:bg-surface-container transition-colors text-center relative flex-shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">TUE</span>
+<span class="font-headline-sm text-headline-sm text-primary">10</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_6px_rgba(232,163,61,0.8)]"></span>
+</button>
+</div>
+</section>
+<!-- Hero Sanctuary Card: Next Maha Utsav -->
+<section class="px-margin-mobile mb-space-lg">
+<div class="relative w-full rounded-[24px] bg-surface-container-lowest overflow-hidden shadow-[0_12px_36px_-6px_rgba(30,27,58,0.08)]">
+<!-- Decorative illuminated header artwork inspired by Indian courtyard rangoli celebration -->
+<div class="relative h-44 w-full overflow-hidden bg-primary-container">
+<img class="w-full h-full object-cover object-center opacity-85" data-alt="An ethereal dusk courtyard of a traditional Indian heritage palace lit by hundreds of warm clay diyas and intricate marigold flower rangoli on stone tiles, watercolor heirloom art book illustration style with soft glowing golden lantern light and twilight indigo sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx3swQ4HHN7xucldMGjOg2rSJikbJtbOBz0VLEvIS29vh1sIbSc2wj63C_w6srtUnyX1lC95fvB2aLYUG2l7M4GyZxgVvmt96WZKOWQ73yRXVJybi1X7OuV7bS3dHXbD9AGAkeyoAferEnL5X7weEBhpcQHbzRUhrq2Hxr0Jlgqg3OfMFci_2vzisgj8kehJEOtnmGEwsCvwB_VIuRth6RSXI56UE45vbmFM-l5bNokkxNzOlXjI64"/>
+<!-- Ethereal gradient scrim for text readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-primary-container/40 to-transparent"></div>
+<!-- Floating Badge -->
+<div class="absolute top-3 left-3 flex items-center gap-1.5 bg-surface-bright/95 backdrop-blur-md px-3 py-1 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary animate-pulse" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider uppercase text-secondary">Maha Utsav</span>
+</div>
+<!-- Countdown Pill -->
+<div class="absolute top-3 right-3 bg-secondary-container/95 text-on-secondary-container px-3 py-1 rounded-full shadow-sm font-label-md text-label-md font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+<span>29 Days Left</span>
+</div>
+<!-- Auspicious Marigold Arch Badge -->
+<div class="absolute bottom-2 left-4 text-surface-bright flex items-center gap-1">
+<span class="font-scripture-md text-scripture-md italic tracking-wide opacity-90 drop-shadow">दीपोत्सव महापर्व</span>
+</div>
+</div>
+<!-- Hero Card Details -->
+<div class="p-4 pt-3 flex flex-col gap-3">
+<div>
+<div class="flex items-baseline justify-between">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-serif">Diwali · Deepavali</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">कार्तिक अमावस्या</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+            Sunday, 8 November 2024 · Festival of Lights
+          </p>
+</div>
+<!-- Muhurat Highlight Banner -->
+<div class="rounded-xl bg-surface-container-low p-3 flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">wb_twilight</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-secondary font-bold">Lakshmi Puja Muhurat</span>
+<span class="font-body-md text-body-md text-primary font-semibold">6:21 PM – 8:14 PM EDT</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pradosh Kaal &amp; Vrishabha Lagna in Edison, NJ</span>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 h-12 bg-secondary text-on-secondary rounded-full font-label-md text-label-md font-semibold tracking-wide flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(131,84,0,0.22)] active:scale-[0.98] transition-transform">
+<span>Open Diwali Guide</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button aria-label="Save Diwali to personal rituals" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+</button>
+<button aria-label="Share festival card" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Festive Atmosphere & Ghat Inspiration Mosaic Banner -->
+<section class="px-margin-mobile mb-space-lg">
+<div class="relative rounded-2xl overflow-hidden bg-primary p-4 text-on-primary shadow-[0_8px_24px_rgba(5,2,32,0.12)]">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]">temple_hindu</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed font-bold">Kashi &amp; Diaspora Rituals</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-primary-container">Dev Deepavali 2024</span>
+</div>
+<div class="flex gap-3 items-center">
+<div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-primary-container">
+<img class="w-full h-full object-cover" data-alt="A tranquil watercolor painting of sacred ancient Varanasi steps descending into the river Ganga illuminated by countless glowing earthen lamps at dusk under a starry twilight crescent moon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ-htzjmdvf86XogfJSQpzYC_lqxVC_YcLRhoiHHNw6SEGUoPsisq1mJ2YD_daWm3yvgXNLeWTC1VHnK3crOfqvfQB_3D-Av-WKbFgTpeQq1qFtUbjr47Ruvnt7EAVhkelCKfKhbxb7hmOM1hjwV5G1RGOWPSPKfXcEKYTWTamALIWCV_fYdXGL5dx6e737zDEVI4OH8c4WoMWi3gv-1E8F1HVAfWxr7tuK4XqURPdWCFX6tbPE4nG"/>
+</div>
+<div class="flex flex-col">
+<p class="font-headline-sm text-headline-sm text-on-primary leading-tight">
+            Connecting our hearths to the eternal ghats.
+          </p>
+<p class="font-body-sm text-body-sm text-on-primary-container mt-1">
+            Audio chants, thali preparation checklists, and grandmother's sweet recipes for the sacred five days.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Upcoming Observances List -->
+<section class="px-margin-mobile flex flex-col gap-space-sm mb-space-lg">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-headline-md text-primary font-serif">Upcoming Observances</h3>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant italic">Vedic Tithi Alignment</span>
+</div>
+<!-- Festival Rows Accordion / Cards -->
+<div class="flex flex-col gap-2.5">
+<!-- 1. Karva Chauth -->
+<article class="bg-surface-container-lowest rounded-2xl p-3.5 shadow-[0_4px_16px_rgba(30,27,58,0.04)] flex items-center justify-between gap-3 active:bg-surface-container transition-colors">
+<div class="w-11 h-11 rounded-xl bg-tertiary-fixed/60 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-tertiary-container text-[22px]">bedtime</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-primary truncate">Karva Chauth</h4>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Vrat</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span>Thu, 29 Oct</span>
+<span>·</span>
+<span class="text-secondary font-medium">Moonrise 8:12 PM EDT</span>
+</div>
+</div>
+<button aria-label="View Karva Chauth Details" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</article>
+<!-- 2. Dhanteras -->
+<article class="bg-surface-container-lowest rounded-2xl p-3.5 shadow-[0_4px_16px_rgba(30,27,58,0.04)] flex items-center justify-between gap-3 active:bg-surface-container transition-colors">
+<div class="w-11 h-11 rounded-xl bg-secondary-fixed/50 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[22px]">savings</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-primary truncate">Dhanteras</h4>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">Diwali Day 1</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span>Fri, 6 Nov</span>
+<span>·</span>
+<span class="text-secondary font-medium">Pradosh Kaal 5:48 – 8:12 PM</span>
+</div>
+</div>
+<button aria-label="View Dhanteras Details" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</article>
+<!-- 3. Naraka Chaturdashi / Chhoti Diwali -->
+<article class="bg-surface-container-lowest rounded-2xl p-3.5 shadow-[0_4px_16px_rgba(30,27,58,0.04)] flex items-center justify-between gap-3 active:bg-surface-container transition-colors">
+<div class="w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-[22px]">flare</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-primary truncate">Naraka Chaturdashi</h4>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Chhoti Diwali</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span>Sat, 7 Nov</span>
+<span>·</span>
+<span>Abhyanga Snan 5:15 AM EDT</span>
+</div>
+</div>
+<button aria-label="View Naraka Chaturdashi Details" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</article>
+<!-- 4. Diwali - Lakshmi Puja -->
+<article class="bg-surface-bright rounded-2xl p-3.5 shadow-[0_6px_20px_rgba(131,84,0,0.08)] flex items-center justify-between gap-3 relative">
+<div class="w-11 h-11 rounded-xl bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-[22px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-primary truncate font-bold">Diwali · Lakshmi Puja</h4>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-semibold">Maha Puja</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span class="font-medium text-primary">Sun, 8 Nov</span>
+<span>·</span>
+<span class="text-secondary font-bold">Amavasya Puja 6:21 PM</span>
+</div>
+</div>
+<button aria-label="View Lakshmi Puja Details" class="w-8 h-8 rounded-full flex items-center justify-center text-secondary hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</article>
+<!-- 5. Govardhan Puja & Annakut -->
+<article class="bg-surface-container-lowest rounded-2xl p-3.5 shadow-[0_4px_16px_rgba(30,27,58,0.04)] flex items-center justify-between gap-3 active:bg-surface-container transition-colors">
+<div class="w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-[22px]">terrain</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-primary truncate">Govardhan &amp; Annakut</h4>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Day 4</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span>Mon, 9 Nov</span>
+<span>·</span>
+<span>Morning Puja 7:15 AM EDT</span>
+</div>
+</div>
+<button aria-label="View Govardhan Puja Details" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</article>
+<!-- 6. Bhai Dooj -->
+<article class="bg-surface-container-lowest rounded-2xl p-3.5 shadow-[0_4px_16px_rgba(30,27,58,0.04)] flex items-center justify-between gap-3 active:bg-surface-container transition-colors">
+<div class="w-11 h-11 rounded-xl bg-tertiary-fixed/60 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-tertiary-container text-[22px]">favorite</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-primary truncate">Bhai Dooj</h4>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Yama Dvitiya</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span>Tue, 10 Nov</span>
+<span>·</span>
+<span class="text-secondary font-medium">Aparahna 1:18 – 3:32 PM</span>
+</div>
+</div>
+<button aria-label="View Bhai Dooj Details" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</article>
+</div>
+</section>
+<!-- Sacred Family Preparation Ritual Tile -->
+<section class="px-margin-mobile mb-space-lg">
+<div class="bg-surface-container rounded-2xl p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">checklist_rtl</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-bold">Preparation Checklist</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">2 of 5 ready</span>
+</div>
+<!-- Checklist Items -->
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 bg-surface-container-lowest p-2.5 rounded-xl cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-secondary accent-secondary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-primary line-through opacity-70">Order clay diyas &amp; organic cotton wicks</span>
+</label>
+<label class="flex items-center gap-3 bg-surface-container-lowest p-2.5 rounded-xl cursor-pointer">
+<input checked="" class="w-4 h-4 rounded text-secondary accent-secondary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-primary line-through opacity-70">Lakshmi-Ganesha silver coin clean ritual</span>
+</label>
+<label class="flex items-center gap-3 bg-surface-container-lowest p-2.5 rounded-xl cursor-pointer">
+<input class="w-4 h-4 rounded text-secondary accent-secondary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-primary">Pick up fresh marigold garlands &amp; mango leaves</span>
+</label>
+<label class="flex items-center gap-3 bg-surface-container-lowest p-2.5 rounded-xl cursor-pointer">
+<input class="w-4 h-4 rounded text-secondary accent-secondary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-primary">Prepare Besan Ladoo &amp; Kaju Katli for naivedya</span>
+</label>
+</div>
+</div>
+</section>
+<!-- Editorial Diasporic Note & Astro Calculation Footer Card -->
+<footer class="px-margin-mobile pb-6">
+<div class="rounded-2xl bg-surface-container-low p-4 flex flex-col gap-2.5 text-on-surface-variant">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[18px] text-secondary">auto_stories</span>
+<span class="font-headline-sm text-headline-sm font-serif">Panchang Computing Note</span>
+</div>
+<p class="font-body-sm text-body-sm leading-relaxed">
+        Muhurat timings are calculated for North American Eastern Daylight Time (EDT) utilizing high-precision Drik Panchang solar and lunar horizon models. Because tithi boundaries shift across timezones, your local temple in the US or Canada may observe pujas slightly earlier or later than ancestral hometown dates in India.
+      </p>
+<div class="pt-1 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Ephemeris: Swiss Ephemeris 2.10</span>
+<span class="text-secondary font-medium underline underline-offset-2 cursor-pointer">Change Calculation Mode</span>
+</div>
+</div>
+</footer>
+<!-- Client Micro-Interactivity -->
+<script>
+    // Simple interactive feedback for calendar date selection
+    const calendarButtons = document.querySelectorAll('#calendar-strip button');
+    calendarButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        calendarButtons.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-on-primary', 'scale-105');
+          b.classList.add('bg-surface-container-lowest');
+          const dayNum = b.querySelector('.font-headline-sm');
+          if (dayNum) dayNum.classList.remove('text-on-primary');
+        });
+        btn.classList.remove('bg-surface-container-lowest');
+        btn.classList.add('bg-primary-container', 'text-on-primary', 'scale-105');
+        const activeNum = btn.querySelector('.font-headline-sm');
+        if (activeNum) activeNum.classList.add('text-on-primary');
+      });
+    });
+
+    // Location toggle prompt
+    const locationBtn = document.getElementById('location-picker-btn');
+    if (locationBtn) {
+      locationBtn.addEventListener('click', () => {
+        const cities = ['Edison, NJ', 'Dallas, TX', 'San Jose, CA', 'Toronto, ON', 'London, UK'];
+        const currentText = locationBtn.querySelector('.font-label-md');
+        if (currentText) {
+          const currentIndex = cities.indexOf(currentText.textContent);
+          const nextIndex = (currentIndex + 1) % cities.length;
+          currentText.textContent = cities[nextIndex];
+        }
+      });
+    }
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_20px_-2px_rgba(30,27,58,0.06)]" data-active-classes="text-secondary font-medium"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant hover:text-secondary transition-colors" data-path="today" href="#"><span class="material-symbols-outlined text-[24px]">wb_sunny</span><span class="font-label-sm text-label-sm">Today</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant hover:text-secondary transition-colors" data-path="guidance" href="#"><span class="material-symbols-outlined text-[24px]">spa</span><span class="font-label-sm text-label-sm">Guidance</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant hover:text-secondary transition-colors" data-path="stories" href="#"><span class="material-symbols-outlined text-[24px]">auto_stories</span><span class="font-label-sm text-label-sm">Stories</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 transition-colors text-secondary font-medium" data-path="festivals" href="#"><span class="material-symbols-outlined text-[24px]">light_mode</span><span class="font-label-sm text-label-sm">Festivals</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant hover:text-secondary transition-colors" data-path="read" href="#"><span class="material-symbols-outlined text-[24px]">menu_book</span><span class="font-label-sm text-label-sm">Read</span></a></div></nav></body></html>

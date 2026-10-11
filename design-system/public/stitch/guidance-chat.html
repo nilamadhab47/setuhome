@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "error-container": "#ffdad6", "surface-container": "#f2ede5", "tertiary-fixed-dim": "#ffb4a4", "on-tertiary": "#ffffff", "secondary": "#835400", "on-background": "#1d1c17", "secondary-fixed": "#ffddb5", "surface-variant": "#e7e2da", "on-secondary": "#ffffff", "inverse-surface": "#32302b", "surface-container-highest": "#e7e2da", "on-secondary-fixed": "#2a1800", "on-primary-container": "#8782a8", "tertiary-fixed": "#ffdad3", "surface-container-low": "#f8f3eb", "surface": "#fef9f1", "tertiary": "#160100", "on-primary-fixed-variant": "#464364", "outline-variant": "#c9c5ce", "surface-dim": "#ded9d2", "error": "#ba1a1a", "on-tertiary-container": "#da6148", "on-surface-variant": "#47464d", "surface-container-lowest": "#ffffff", "on-surface": "#1d1c17", "on-primary-fixed": "#1a1736", "surface-container-high": "#ece8e0", "secondary-container": "#feb64e", "primary-fixed": "#e4dfff", "background": "#fef9f1", "tertiary-container": "#440600", "inverse-primary": "#c7c2ea", "on-error": "#ffffff", "on-secondary-container": "#714800", "on-error-container": "#93000a", "inverse-on-surface": "#f5f0e8", "on-primary": "#ffffff", "primary-container": "#1e1b3a", "primary": "#050220", "outline": "#78767e", "surface-bright": "#fef9f1", "surface-tint": "#5e5a7d", "on-secondary-fixed-variant": "#643f00", "on-tertiary-fixed": "#3e0500", "secondary-fixed-dim": "#ffb956", "on-tertiary-fixed-variant": "#852310", "primary-fixed-dim": "#c7c2ea" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-mobile": "0.75rem", "space-sm": "0.75rem", "space-xs": "0.375rem", "space-md": "1.25rem", "margin": "1.5rem", "gutter": "1rem", "space-xl": "2.5rem", "margin-mobile": "1.25rem", "space-lg": "1.75rem" }, fontFamily: { "scripture-md": ["Noto Serif"], "label-sm": ["DM Sans"], "headline-lg-mobile": ["EB Garamond"], "headline-md": ["EB Garamond"], "headline-xl": ["EB Garamond"], "body-lg": ["DM Sans"], "transliteration-md": ["EB Garamond"], "headline-xl-mobile": ["EB Garamond"], "body-md": ["DM Sans"], "scripture-lg": ["Noto Serif"], "headline-sm": ["EB Garamond"], "body-sm": ["DM Sans"], "label-md": ["DM Sans"], "headline-lg": ["EB Garamond"] }, fontSize: { "scripture-md": ["18px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "500" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-lg": ["17px", { "lineHeight": "26px", "fontWeight": "400" }], "transliteration-md": ["18px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-xl-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "scripture-lg": ["22px", { "lineHeight": "34px", "letterSpacing": "0.02em", "fontWeight": "400" }], "headline-sm": ["19px", { "lineHeight": "26px", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "500" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-secondary-fixed selection:text-on-secondary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(30,27,58,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary"><span class="material-symbols-outlined text-[20px]">temple_hindu</span></div><div><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase block">SetuHome</span><h1 class="font-headline-md text-headline-md text-primary leading-tight font-serif">Setuhome — Guidance</h1></div></div><div class="flex items-center gap-space-xs"><button aria-label="Sacred Search" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors rounded-full hover:bg-surface-container-high/60"><span class="material-symbols-outlined text-[22px]">search</span></button><button aria-label="Personal Profile" class="min-w-[44px] min-h-[44px] flex items-center justify-center"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-primary-container transition-colors shadow-sm"><span class="material-symbols-outlined text-[18px]">person</span></div></button></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full relative">
+<!-- Confidentiality Anchor -->
+<div class="px-margin-mobile pt-space-xs pb-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs bg-surface-container-low px-3 py-1 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wide">Private &amp; confidential reflection</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm">Sanctuary Open</span>
+</div>
+</div>
+<!-- Dialogue Thread Container -->
+<div class="flex flex-col px-margin-mobile space-y-space-md pb-space-xl">
+<!-- Day & Time Divider -->
+<div class="flex items-center justify-center my-space-xs">
+<div class="h-[1px] bg-surface-container-high w-12 mr-3"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Today · 8:42 AM</span>
+<div class="h-[1px] bg-surface-container-high w-12 ml-3"></div>
+</div>
+<!-- User Query Bubble -->
+<div class="flex flex-col items-end self-end max-w-[86%]">
+<div class="bg-primary-container text-surface-container-lowest rounded-2xl rounded-tr-sm p-4 shadow-sm">
+<p class="font-body-md text-body-md leading-relaxed text-surface-container-lowest font-normal">
+          I feel like I’m failing my kids. Work takes everything and I’m never present.
+        </p>
+</div>
+<div class="flex items-center gap-1 mt-1 pr-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">8:42 AM · Received</span>
+<span class="material-symbols-outlined text-[13px] text-secondary">check_circle</span>
+</div>
+</div>
+<!-- Setu Wisdom Reply Bubble -->
+<div class="flex flex-col items-start self-start max-w-[94%]">
+<div class="bg-surface-container-lowest rounded-2xl rounded-tl-sm p-5 shadow-sm space-y-3.5">
+<!-- Reply Identity -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container-low flex items-center justify-center">
+<svg class="w-3.5 h-3.5 text-secondary" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24">
+<path d="M12 21c-4-4-7-8.5-7-12a7 7 0 0 1 14 0c0 3.5-3 8-7 12z"></path>
+<path d="M12 9a3 3 0 0 0-3 3c0 2 3 5 3 5s3-3 3-5a3 3 0 0 0-3-3z"></path>
+</svg>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant tracking-wider uppercase">Setu Wisdom</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-low px-2 py-0.5 rounded-full">Contemplative</span>
+</div>
+<!-- Empathetic Opener -->
+<p class="font-body-lg text-body-lg text-primary font-medium leading-relaxed">
+          That sounds exhausting, and it’s clear how deeply you care about them.
+        </p>
+<!-- Scriptural Perspective -->
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          In the Gita, Krishna teaches that our mind can be our greatest ally or our harshest adversary. Guilt often divides our attention further, whispering that wherever we are, we should be elsewhere. What your children need is not an unbroken span of weary hours, but moments of undivided presence—the mindful offering of oneself, pure and untangled from anxiety.
+        </p>
+<!-- Interactive Citation Chip / Bookmark -->
+<div class="pt-1">
+<button class="group bg-surface-container-low hover:bg-surface-container transition-colors px-3.5 py-2 rounded-xl flex items-center justify-between w-full text-left shadow-xs" id="openCitationBtn" type="button">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[18px] text-secondary">menu_book</span>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary text-[15px] truncate">Bhagavad Gita 6.5</span>
+<span class="font-scripture-md text-scripture-md text-secondary text-[13px] truncate leading-tight">उद्धरेदात्मनात्मानम्</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-secondary ml-2 shrink-0">
+<span class="font-label-sm text-label-sm group-hover:underline">Explore verse</span>
+<span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-0.5">chevron_right</span>
+</div>
+</button>
+</div>
+<!-- Sacred Practice Suggestion -->
+<div class="bg-surface-container-low/70 rounded-xl p-3.5 space-y-1">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[16px] text-secondary">spa</span>
+<span class="font-headline-sm text-headline-sm text-[15px]">Try today</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-normal">
+            When you step through the door tonight, take three deep breaths and offer just ten minutes of wholehearted, phone-free connection. In sacred time, quality outweighs quantity.
+          </p>
+</div>
+<!-- Inline Meta Action Ribbon -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm py-1">
+<span class="material-symbols-outlined text-[16px]">bookmark_border</span>
+<span>Save</span>
+</button>
+<button class="inline-flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm py-1">
+<span class="material-symbols-outlined text-[16px]">share</span>
+<span>Share</span>
+</button>
+</div>
+<button aria-label="Reflection Feedback" class="text-outline hover:text-on-surface-variant transition-colors p-1">
+<span class="material-symbols-outlined text-[16px]">flag</span>
+</button>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 pl-1">8:43 AM · Offered with care</span>
+</div>
+</div>
+<!-- Input Field Bar (Fixed above Navigation) -->
+<div class="sticky bottom-16 inset-x-0 bg-surface/95 backdrop-blur-md px-margin-mobile py-2.5 z-20">
+<div class="bg-surface-container-lowest rounded-full shadow-sm flex items-center px-4 py-1.5 gap-2">
+<button aria-label="Mic input" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<input class="flex-1 bg-transparent border-none outline-none font-body-md text-body-md text-primary placeholder:text-outline font-normal py-1" placeholder="Type what’s on your mind…" type="text"/>
+<button aria-label="Send reflection" class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:opacity-90 active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[19px]">arrow_upward</span>
+</button>
+</div>
+</div>
+<!-- Verse Citation Bottom Sheet Backdrop -->
+<div class="fixed inset-0 bg-primary/40 backdrop-blur-xs z-40 transition-opacity duration-300 opacity-100 flex items-end" id="sheetBackdrop">
+<!-- Elevated Sheet Container -->
+<div class="w-full bg-surface-bright rounded-t-3xl shadow-xl max-h-[751px] overflow-y-auto flex flex-col transition-transform duration-300 translate-y-0" id="citationSheet">
+<!-- Drag Bar -->
+<div class="pt-3 pb-2 flex justify-center cursor-pointer" id="sheetHandle">
+<div class="w-12 h-1.5 rounded-full bg-surface-container-highest"></div>
+</div>
+<!-- Sheet Header -->
+<div class="px-margin-mobile pb-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block">Bhagavad Gita</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Chapter 6, Verse 5</h2>
+</div>
+</div>
+<button aria-label="Close sheet" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" id="closeSheetBtn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Sheet Body Content -->
+<div class="px-margin-mobile space-y-space-md pb-8 pt-2">
+<!-- Audio Chanting Ribbon -->
+<div class="bg-surface-container-low rounded-2xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button aria-label="Play recitation" class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary">Sanskrit Recitation</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Traditional Vedic chant · 0:38</span>
+</div>
+</div>
+<div class="flex items-center gap-1 pr-1">
+<span class="w-1 h-3 rounded-full bg-secondary animate-pulse"></span>
+<span class="w-1 h-5 rounded-full bg-secondary"></span>
+<span class="w-1 h-2 rounded-full bg-secondary"></span>
+</div>
+</div>
+<!-- Devotional Verse Frame -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm space-y-3 relative overflow-hidden">
+<div class="absolute top-0 left-0 bottom-0 w-1 bg-secondary"></div>
+<div class="space-y-2 pl-2">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Mūla Shloka</span>
+<p class="font-scripture-lg text-scripture-lg text-primary text-center font-normal tracking-wide leading-relaxed py-1">
+              उद्धरेदात्मनात्मानं नात्मानमवसादयेत् ।<br/>
+              आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः ॥
+            </p>
+</div>
+<div class="h-[1px] bg-surface-container-high my-2"></div>
+<!-- Transliteration -->
+<div class="space-y-1 pl-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Transliteration</span>
+<p class="font-transliteration-md text-transliteration-md text-on-surface italic leading-relaxed">
+              uddhared ātmanātmānaṁ nātmānam avasādayet |<br/>
+              ātmaiva hy ātmano bandhur ātmaiva ripur ātmanaḥ
+            </p>
+</div>
+</div>
+<!-- Translation & Meaning -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm space-y-2">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Meaning</span>
+<p class="font-body-md text-body-md text-primary leading-relaxed">
+            One must elevate, not degrade, oneself by the mind. For the mind can be the true friend of the soul, and the mind can also be its greatest enemy.
+          </p>
+</div>
+<!-- Commentary & Everyday Integration -->
+<div class="bg-surface-container-low rounded-2xl p-5 space-y-2">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px] text-secondary">lightbulb</span>
+<h3 class="font-headline-sm text-headline-sm text-[16px]">Sanctuary Commentary</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Krishna reminds us that self-condemnation depletes the spirit. When parenting demands seem relentless, the mind easily slips into self-reproach. Lift yourself first with gentle acceptance; the loving composure you cultivate inside is the exact atmosphere your children will absorb.
+          </p>
+</div>
+<!-- Action Row inside Sheet -->
+<div class="flex items-center gap-3 pt-2">
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md py-3.5 px-4 rounded-full flex items-center justify-center gap-2 hover:bg-primary-container transition-all active:scale-98 shadow-sm" id="saveJournalBtn">
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+<span>Save to Journal</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md py-3.5 px-6 rounded-full transition-colors active:scale-98" id="closeSheetSecondaryBtn">
+            Done
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const backdrop = document.getElementById('sheetBackdrop');
+    const sheet = document.getElementById('citationSheet');
+    const openBtn = document.getElementById('openCitationBtn');
+    const closeBtn = document.getElementById('closeSheetBtn');
+    const closeSecBtn = document.getElementById('closeSheetSecondaryBtn');
+    const saveBtn = document.getElementById('saveJournalBtn');
+
+    function openSheet() {
+      if (!backdrop || !sheet) return;
+      backdrop.classList.remove('pointer-events-none', 'opacity-0');
+      backdrop.classList.add('opacity-100');
+      sheet.classList.remove('translate-y-full');
+      sheet.classList.add('translate-y-0');
+    }
+
+    function closeSheet() {
+      if (!backdrop || !sheet) return;
+      sheet.classList.remove('translate-y-0');
+      sheet.classList.add('translate-y-full');
+      backdrop.classList.remove('opacity-100');
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openSheet);
+    if (closeBtn) closeBtn.addEventListener('click', closeSheet);
+    if (closeSecBtn) closeSecBtn.addEventListener('click', closeSheet);
+
+    if (backdrop) {
+      backdrop.addEventListener('click', function(e) {
+        if (e.target === backdrop) {
+          closeSheet();
+        }
+      });
+    }
+
+    if (saveBtn) {
+      saveBtn.addEventListener('click', function() {
+        const icon = saveBtn.querySelector('.material-symbols-outlined');
+        const text = saveBtn.querySelector('span:last-child');
+        if (icon && text) {
+          icon.textContent = 'check';
+          text.textContent = 'Saved to Journal';
+          saveBtn.classList.add('bg-secondary');
+          setTimeout(() => {
+            closeSheet();
+          }, 600);
+        }
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-4px_24px_rgba(30,27,58,0.06)]" data-active-classes="text-secondary [&amp;&gt;span.active-dot]:opacity-100"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] flex-1 text-on-surface-variant transition-colors group relative pt-1" data-path="setuhome-today" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-on-surface transition-transform duration-200">wb_sunny</span><span class="font-label-sm text-label-sm mt-0.5">Today</span><span class="active-dot opacity-0 w-1 h-1 rounded-full bg-secondary transition-opacity duration-200 mt-0.5"></span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] flex-1 text-on-surface-variant transition-colors group relative pt-1" data-path="setuhome-guidance" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-on-surface transition-transform duration-200">spa</span><span class="font-label-sm text-label-sm mt-0.5">Guidance</span><span class="active-dot opacity-0 w-1 h-1 rounded-full bg-secondary transition-opacity duration-200 mt-0.5"></span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] flex-1 text-on-surface-variant transition-colors group relative pt-1" data-path="setuhome-stories" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-on-surface transition-transform duration-200">menu_book</span><span class="font-label-sm text-label-sm mt-0.5">Stories</span><span class="active-dot opacity-0 w-1 h-1 rounded-full bg-secondary transition-opacity duration-200 mt-0.5"></span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] flex-1 text-on-surface-variant transition-colors group relative pt-1" data-path="setuhome-festivals" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-on-surface transition-transform duration-200">local_fire_department</span><span class="font-label-sm text-label-sm mt-0.5">Festivals</span><span class="active-dot opacity-0 w-1 h-1 rounded-full bg-secondary transition-opacity duration-200 mt-0.5"></span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] flex-1 text-on-surface-variant transition-colors group relative pt-1" data-path="setuhome-read" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-on-surface transition-transform duration-200">auto_stories</span><span class="font-label-sm text-label-sm mt-0.5">Read</span><span class="active-dot opacity-0 w-1 h-1 rounded-full bg-secondary transition-opacity duration-200 mt-0.5"></span></a></div><div class="flex justify-center pb-2"><div class="w-32 h-1 bg-outline-variant/50 rounded-full"></div></div></nav></body></html>

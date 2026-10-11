@@ -1,0 +1,46 @@
+# secrets
+.env
+.env*.local
+**/.env
+**/.env*.local
+
+# dependencies
+node_modules/
+.pnpm-store/
+
+# expo / metro
+.expo/
+.screenshots/
+dist/
+web-build/
+expo-env.d.ts
+*.tsbuildinfo
+
+# next
+.next/
+out/
+
+# native
+/ios
+/android
+.kotlin/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# listen extract cache
+mobile/data/listen-raw/
+
+# the Star Publications scan is not a source
+279.pdf
+
+# misc
+.DS_Store
+*.pem
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+.metro-health-check*
+.vercel

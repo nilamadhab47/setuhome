@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+:root {
+  --parchment: #fbf6ee;
+  --sunk: #f8f3eb;
+  --ink: #1e1b3a;
+  --plum: #6b6577;
+  --line: #eadfcf;
+  --marigold: #e8a33d;
+  --marigold-deep: #d9942e;
+  --vermilion: #b5462f;
+}
+
+@theme inline {
+  --color-parchment: var(--parchment);
+  --color-sunk: var(--sunk);
+  --color-ink: var(--ink);
+  --color-plum: var(--plum);
+  --color-line: var(--line);
+  --color-marigold: var(--marigold);
+  --color-marigold-deep: var(--marigold-deep);
+  --color-vermilion: var(--vermilion);
+  --font-sans: var(--font-dm);
+  --font-serif: var(--font-garamond);
+  --font-devanagari: var(--font-devanagari);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  overflow-x: clip;
+}
+
+body {
+  background:
+    radial-gradient(ellipse 70% 32% at 80% 8%, rgba(232, 163, 61, 0.16), transparent 60%),
+    radial-gradient(ellipse 50% 28% at 10% 18%, rgba(181, 70, 47, 0.06), transparent 55%),
+    var(--parchment);
+  color: var(--ink);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(6px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.9s ease;
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.phone-stage {
+  position: relative;
+}
+
+.phone-stage::before {
+  content: "";
+  position: absolute;
+  inset: 8% 4%;
+  z-index: 0;
+  border-radius: 40%;
+  background: radial-gradient(circle, rgba(232, 163, 61, 0.45), transparent 68%);
+  filter: blur(22px);
+  animation: glow 7s ease-in-out infinite;
+}
+
+.phone-stage > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes float-phone {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.rise {
+  animation: rise 0.8s ease both;
+}
+
+.rise-2 {
+  animation-delay: 0.12s;
+}
+
+.rise-3 {
+  animation-delay: 0.24s;
+}
+
+.rise-4 {
+  animation-delay: 0.36s;
+}
+
+.phone-float {
+  animation: float-phone 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .phone-float,
+  .phone-stage::before {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SetuHome · सेतु — Bring home with you</title>
+<!-- Google Fonts: Cormorant Garamond & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Inter:wght@300;400;500;600&amp;family=Tiro+Devanagari+Sanskrit:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            parchment: '#FBF6EE',
+            'sacred-indigo': '#1E1B3A',
+            'muted-slate': '#6B6577',
+            'marigold-accent': '#E8A33D',
+            'marigold-hover': '#D9942E',
+            'vermilion-dot': '#B5462F',
+            'border-warm': '#EADFCF',
+            'border-subtle': '#F0E7DB',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            sanskrit: ['"Tiro Devanagari Sanskrit"', 'serif'],
+          },
+          boxShadow: {
+            'warm-card': '0 12px 36px -6px rgba(30, 27, 58, 0.05), 0 4px 12px -2px rgba(30, 27, 58, 0.03)',
+            'warm-float': '0 24px 48px -10px rgba(30, 27, 58, 0.12), 0 8px 20px -4px rgba(30, 27, 58, 0.06)',
+            'phone-frame': '0 30px 60px -12px rgba(30, 27, 58, 0.25), 0 10px 24px -6px rgba(30, 27, 58, 0.15)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Typography & Global Nuances -->
+<style data-purpose="typography-and-effects">
+    body {
+      background-color: #FBF6EE;
+      color: #1E1B3A;
+      font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .editorial-arch {
+      border-top-left-radius: 180px;
+      border-top-right-radius: 180px;
+    }
+    
+    .gold-foil-border {
+      box-shadow: inset 0 0 0 1px rgba(232, 163, 61, 0.35), 0 0 0 1px rgba(234, 223, 207, 0.8);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-parchment text-sacred-indigo font-sans selection:bg-marigold-accent/20 selection:text-sacred-indigo">
+<!-- BEGIN: TopNavigationBar -->
+<header class="fixed top-0 inset-x-0 z-50 transition-all duration-300 backdrop-blur-md bg-parchment/90 border-b border-border-warm">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<!-- Brand Logo / Wordmark -->
+<a class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-marigold-accent rounded-lg" data-purpose="brand-logo" href="#">
+<div class="w-8 h-8 flex items-center justify-center text-marigold-accent">
+<!-- Fine-line lotus icon -->
+<svg class="w-7 h-7 stroke-current" fill="none" stroke-width="1.3" viewbox="0 0 24 24">
+<path d="M12 21c-4-4-8-7.5-8-11a5 5 0 0110 0 5 5 0 0110 0c0 3.5-4 7-8 11z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 21V10m0 0a4 4 0 01-4-4 4 4 0 014-4 4 4 0 014 4 4 4 0 01-4 4z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-serif text-2xl tracking-wide font-medium text-sacred-indigo">SetuHome</span>
+<span class="font-sanskrit text-sm text-muted-slate tracking-normal font-normal">· सेतु</span>
+</div>
+</a>
+<!-- Center Nav Links -->
+<nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide text-sacred-indigo/80" data-purpose="main-navigation">
+<a class="hover:text-sacred-indigo transition-colors py-1 hover:border-b hover:border-marigold-accent" href="#features">Features</a>
+<a class="hover:text-sacred-indigo transition-colors py-1 hover:border-b hover:border-marigold-accent" href="#festivals">Festivals</a>
+<a class="hover:text-sacred-indigo transition-colors py-1 hover:border-b hover:border-marigold-accent" href="#for-kids">For kids</a>
+<a class="hover:text-sacred-indigo transition-colors py-1 hover:border-b hover:border-marigold-accent" href="#scripture">Scripture</a>
+<a class="hover:text-sacred-indigo transition-colors py-1 hover:border-b hover:border-marigold-accent" href="#faq">FAQ</a>
+</nav>
+<!-- Right Action Items -->
+<div class="flex items-center gap-5" data-purpose="header-cta-group">
+<!-- Subtle Language Toggle -->
+<button class="text-xs tracking-wider uppercase font-serif text-muted-slate hover:text-sacred-indigo px-2.5 py-1 rounded border border-border-warm/60 transition-colors" title="Switch language" type="button">
+          EN / सं
+        </button>
+<!-- Waitlist Pill CTA Button -->
+<a class="inline-flex items-center justify-center bg-marigold-accent hover:bg-marigold-hover text-sacred-indigo font-medium text-sm px-5 py-2.5 rounded-full shadow-sm transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0" href="#waitlist">
+          Join the waitlist
+        </a>
+</div>
+</div>
+</header>
+<!-- END: TopNavigationBar -->
+<!-- BEGIN: HeroSection -->
+<main class="relative pt-28 pb-20 lg:pt-36 lg:pb-32 overflow-hidden">
+<!-- Subtle Golden Ray Texture Overlay -->
+<div class="absolute inset-0 pointer-events-none opacity-40 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-amber-100/60 via-transparent to-transparent"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left Hero Column: Narrative & Waitlist Form -->
+<div class="lg:col-span-6 space-y-8" data-purpose="hero-narrative">
+<!-- Overline Badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-border-warm shadow-sm text-xs tracking-widest uppercase font-medium text-sacred-indigo">
+<span class="w-1.5 h-1.5 rounded-full bg-marigold-accent animate-pulse"></span>
+<span>✦ Coming this Diwali · iOS &amp; Android</span>
+</div>
+<!-- Hero Headline -->
+<h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl leading-[1.08] font-normal tracking-tight text-sacred-indigo">
+            Bring home <br class="hidden sm:inline"/>with you.
+          </h1>
+<!-- Bridge Meaning Quote -->
+<p class="font-serif italic text-xl lg:text-2xl leading-relaxed text-muted-slate border-l-2 border-marigold-accent/70 pl-4 py-0.5">
+            Setu means bridge in Sanskrit: a bridge between the home you grew up in and the home you’re building.
+          </p>
+<!-- Subheadline Narrative -->
+<p class="text-base sm:text-lg leading-relaxed text-muted-slate max-w-xl">
+            Start each morning with the Gita, celebrate every festival on the right day for your city, and pass the sacred stories on to your kids.
+          </p>
+<!-- Waitlist Registration Form -->
+<div class="pt-2 max-w-lg" data-purpose="waitlist-form-container" id="waitlist">
+<form class="flex flex-col sm:flex-row gap-3 sm:gap-2 p-1.5 bg-white border border-border-warm rounded-2xl sm:rounded-full shadow-warm-card focus-within:border-marigold-accent transition-colors" onsubmit="event.preventDefault();">
+<label class="sr-only" for="email-input">Email address</label>
+<input class="flex-1 bg-transparent px-5 py-3.5 text-sm sm:text-base text-sacred-indigo placeholder-[#9E98A8] border-none focus:ring-0 focus:outline-none" id="email-input" name="email" placeholder="Enter your email address..." required="" type="email"/>
+<button class="inline-flex items-center justify-center gap-2 bg-marigold-accent hover:bg-marigold-hover text-sacred-indigo font-medium text-sm sm:text-base px-6 py-3.5 rounded-full transition-all duration-150 shrink-0 shadow-sm" type="submit">
+<span>Join the waitlist</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</form>
+<!-- Reassuring Microcopy -->
+<div class="mt-3 flex items-center gap-2 text-xs text-muted-slate/90 pl-3">
+<svg class="w-3.5 h-3.5 text-marigold-accent" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Free during Diwali week for early members. No spam, ever.</span>
+</div>
+</div>
+<!-- Diaspora City Pulse Markers -->
+<div class="pt-4 border-t border-border-warm/70" data-purpose="diaspora-city-indicators">
+<div class="text-xs uppercase tracking-wider text-muted-slate font-medium mb-2.5">
+              Calculating local sunrise &amp; tithi for:
+            </div>
+<div class="flex flex-wrap items-center gap-2 text-xs font-medium text-sacred-indigo/80">
+<span class="inline-flex items-center gap-1 bg-white/70 px-2.5 py-1 rounded-md border border-border-warm">
+<span class="text-vermilion-dot">📍</span> Edison
+              </span>
+<span class="inline-flex items-center gap-1 bg-white/70 px-2.5 py-1 rounded-md border border-border-warm">
+<span class="text-vermilion-dot">📍</span> San Jose
+              </span>
+<span class="inline-flex items-center gap-1 bg-white/70 px-2.5 py-1 rounded-md border border-border-warm">
+<span class="text-vermilion-dot">📍</span> Toronto
+              </span>
+<span class="inline-flex items-center gap-1 bg-white/70 px-2.5 py-1 rounded-md border border-border-warm">
+<span class="text-vermilion-dot">📍</span> London
+              </span>
+<span class="inline-flex items-center gap-1 bg-white/70 px-2.5 py-1 rounded-md border border-border-warm">
+<span class="text-vermilion-dot">📍</span> Sydney
+              </span>
+</div>
+</div>
+</div>
+<!-- Right Hero Column: Layered Canvas Mockup with Bridge Art & Mobile Phone -->
+<div class="lg:col-span-6 relative flex justify-center items-center" data-purpose="hero-visual-composition">
+<!-- Background Watercolor Miniature Canvas (Arch Framed) -->
+<div class="relative w-full max-w-[500px] aspect-[4/5] rounded-[40px] editorial-arch overflow-hidden gold-foil-border shadow-warm-float bg-amber-50">
+<img alt="Sacred stone bridge bathed in dawn light with tranquil river and cozy cottage" class="w-full h-full object-cover object-center filter brightness-[1.02] contrast-[0.98]" src="https://lh3.googleusercontent.com/aida/AEtjO1UGbI6I9WyQqu1mtqL17B1HrPo4Xq9YR3TkJpeXQnqKMSquXv8nengo1bkljxcdHWi-H-i3nIIXIXfE_iKW4EFy3t0yjq_uHSMW7S-_EFAXOOEJP2_UNxiadRVtKTKQ4PPlTZEUVEt-TtyJuSXC6qYzymqG38GzNM0S98LWw07fAs5lJ980cNNbIzi3kCNgcNofUfflgkTB8wKPK_VyzZf0Nv9zlQpeLjpNzDsw6J9Tjn2LoxmlFxPjN5s"/>
+<!-- Soft Gradient Overlay for depth -->
+<div class="absolute inset-0 bg-gradient-to-t from-sacred-indigo/30 via-transparent to-transparent pointer-events-none"></div>
+<!-- Floating Stamp Label on Painting -->
+<div class="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-white/80 p-3 rounded-xl border border-white/60 shadow-sm flex items-center justify-between text-xs text-sacred-indigo font-serif">
+<span class="italic">The Bridge at Dawn (सेतु)</span>
+<span class="text-muted-slate text-[10px] tracking-widest font-sans uppercase">Editorial Edition</span>
+</div>
+</div>
+<!-- Foreground Floating Realistic iPhone 16 Pro Mockup -->
+<div class="absolute -bottom-8 -right-2 sm:-right-4 lg:-right-6 w-[290px] sm:w-[320px] bg-[#0E0D14] rounded-[50px] p-3 shadow-phone-frame border-[4px] border-[#343142] ring-1 ring-white/20" data-purpose="mobile-device-mockup">
+<!-- Screen Container -->
+<div class="w-full bg-[#FAF7F2] rounded-[42px] overflow-hidden text-sacred-indigo flex flex-col font-sans border border-border-warm/80">
+<!-- iPhone Top Island & Status Bar -->
+<div class="pt-3 px-6 pb-2 flex items-center justify-between text-[11px] font-semibold text-sacred-indigo">
+<span>6:42</span>
+<!-- Dynamic Island -->
+<div class="w-20 h-4 bg-black rounded-full mx-auto"></div>
+<div class="flex items-center gap-1 text-[10px]">
+<span>5G</span>
+<div class="w-4 h-2 border border-current rounded-sm p-0.5"><div class="w-full h-full bg-current"></div></div>
+</div>
+</div>
+<!-- App Header -->
+<div class="px-5 pt-2 pb-3 border-b border-border-warm/60 flex items-center justify-between">
+<div>
+<div class="text-[10px] tracking-wider uppercase font-semibold text-muted-slate">SetuHome · Today</div>
+<div class="font-serif text-sm font-semibold text-sacred-indigo">Kartika Amavasya</div>
+</div>
+<!-- Location indicator badge inside app -->
+<div class="text-[9px] bg-white px-2 py-0.5 rounded-full border border-border-warm text-muted-slate flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-vermilion-dot"></span>
+<span>Edison, NJ</span>
+</div>
+</div>
+<!-- App Content: Today's Shloka Card -->
+<div class="p-4 space-y-3">
+<!-- Shloka Artwork Placeholder / Mini Painting Container -->
+<div class="relative w-full h-24 rounded-lg overflow-hidden border border-border-warm shadow-xs">
+<img alt="Bhagavad Gita chariot scene at dawn Kurukshetra" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Wlf7y2Vbvtf-bgSpM_P_HJnuxgJT5WQAkMn2oqqNDDG6CstHFfEuJlZjl0ts478MYNI3UUETYXahs4nZAsQscRCY8inT3oi4CETiIsWiDS3WXQO1vkhZHH13Kxc_8OWHiW-uLDiZF90I2Uy0byPxHXxLyNJWc-WrQTRBX9wWa_ZVzCbHM2q1-3XZutTLlTHKxJsFdLJq-9B4qGQPlCAQf-YMNiYh8C3x3IRRzvW9fIs6-u4VbPQ-85rCc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-sacred-indigo/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-1.5 left-2 text-[10px] text-white font-serif tracking-wider">
+                    Chapter 2, Verse 47
+                  </div>
+</div>
+<!-- Verse in Devanagari -->
+<div class="bg-white p-3 rounded-xl border border-border-warm shadow-xs text-center space-y-1.5">
+<p class="font-sanskrit text-sm font-normal text-sacred-indigo leading-relaxed">
+                    कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।<br/>
+                    मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥
+                  </p>
+<!-- Roman Transliteration -->
+<p class="font-serif italic text-[11px] text-muted-slate leading-tight">
+                    karmaṇy-evādhikāras te mā phaleṣu kadācana...
+                  </p>
+</div>
+<!-- English Translation -->
+<div class="px-1 text-center">
+<p class="font-serif text-xs text-sacred-indigo leading-snug">
+                    “You have a right to your sacred action alone, never to its fruits.”
+                  </p>
+</div>
+<!-- Audio Chant Player Pill -->
+<div class="bg-white rounded-full p-1.5 border border-border-warm shadow-xs flex items-center justify-between">
+<div class="flex items-center gap-2 pl-2">
+<span class="w-2 h-2 rounded-full bg-marigold-accent animate-ping"></span>
+<span class="text-[10px] font-medium text-sacred-indigo">Chant · Pandit Somesh</span>
+</div>
+<button class="bg-marigold-accent hover:bg-marigold-hover text-sacred-indigo text-[10px] font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-xs">
+<span>▶ 3 min</span>
+</button>
+</div>
+<!-- Streak & Local Sunrise Footer in App -->
+<div class="pt-1 flex items-center justify-between text-[9px] text-muted-slate px-1">
+<span>🌅 Sunrise 7:06 AM</span>
+<span class="font-medium text-sacred-indigo">🔥 13 morning streak</span>
+</div>
+</div>
+<!-- Bottom Indicator -->
+<div class="mt-2 pb-2 flex justify-center">
+<div class="w-24 h-1 bg-sacred-indigo/20 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- END: HeroSection -->
+<!-- BEGIN: ThreePillarsSection -->
+<section class="py-20 lg:py-28 border-t border-border-warm bg-[#FAF6F0]" data-purpose="three-pillars-features" id="features">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+<div class="text-xs uppercase tracking-widest text-muted-slate font-medium">Sacred Tradition Meets Quiet Engineering</div>
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-sacred-indigo">
+          Three daily practices to keep your home rooted.
+        </h2>
+<p class="text-muted-slate text-sm sm:text-base leading-relaxed">
+          Crafted with care for apartments in London, suburban homes in New Jersey, and everywhere our families make sanctuary.
+        </p>
+</div>
+<!-- 3-Column Card Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Pillar 1: Morning Shlokas -->
+<div class="bg-white p-8 rounded-3xl border border-border-warm shadow-warm-card flex flex-col justify-between hover:border-marigold-accent/60 transition-all duration-200 group" data-purpose="feature-pillar-1">
+<div class="space-y-5">
+<!-- Icon Frame -->
+<div class="w-12 h-12 rounded-2xl bg-parchment flex items-center justify-center border border-border-warm text-sacred-indigo">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.4" viewbox="0 0 24 24">
+<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h3 class="font-serif text-2xl font-medium text-sacred-indigo">Morning Shlokas</h3>
+<p class="text-muted-slate text-sm leading-relaxed">
+              Bhagavad Gita delivered precisely at your local sunrise. Complete with word-by-word Sanskrit meaning and down-to-earth modern reflection you can contemplate on your commute.
+            </p>
+</div>
+<div class="pt-6 mt-6 border-t border-border-warm/60 text-xs font-serif italic text-muted-slate">
+            Includes audio chants by Vedic scholars
+          </div>
+</div>
+<!-- Pillar 2: Festival Muhurat -->
+<div class="bg-white p-8 rounded-3xl border border-border-warm shadow-warm-card flex flex-col justify-between hover:border-marigold-accent/60 transition-all duration-200 group" data-purpose="feature-pillar-2">
+<div class="space-y-5">
+<!-- Icon Frame -->
+<div class="w-12 h-12 rounded-2xl bg-parchment flex items-center justify-center border border-border-warm text-sacred-indigo">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.4" viewbox="0 0 24 24">
+<path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h3 class="font-serif text-2xl font-medium text-sacred-indigo">Accurate Festivals for Your City</h3>
+<p class="text-muted-slate text-sm leading-relaxed">
+              No more guessing if Diwali or Raksha Bandhan falls on Thursday or Friday. Exact Lakshmi Puja, Karva Chauth, and Janmashtami timings calculated specifically for your longitude and timezone.
+            </p>
+</div>
+<div class="pt-6 mt-6 border-t border-border-warm/60 text-xs font-serif italic text-muted-slate">
+            Precise tithi calculation for over 450 diaspora cities
+          </div>
+</div>
+<!-- Pillar 3: Little Setu Kids Stories -->
+<div class="bg-white p-8 rounded-3xl border border-border-warm shadow-warm-card flex flex-col justify-between hover:border-marigold-accent/60 transition-all duration-200 group" data-purpose="feature-pillar-3">
+<div class="space-y-5">
+<!-- Icon Frame -->
+<div class="w-12 h-12 rounded-2xl bg-parchment flex items-center justify-center border border-border-warm text-sacred-indigo">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.4" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h3 class="font-serif text-2xl font-medium text-sacred-indigo">Stories for Little Setu</h3>
+<p class="text-muted-slate text-sm leading-relaxed">
+              Gentle, beautifully illustrated bedtime tales from the Panchatantra, Ramayana, and Mahabharata. Paired with soothing acoustic tanpura audio designed for children growing up far from grandmothers.
+            </p>
+</div>
+<div class="pt-6 mt-6 border-t border-border-warm/60 text-xs font-serif italic text-muted-slate">
+            Bilingual audio: English, Hindi, Tamil &amp; Gujarati
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ThreePillarsSection -->
+<!-- BEGIN: PhilosophyQuoteBanner -->
+<section class="py-24 bg-white border-y border-border-warm relative overflow-hidden" data-purpose="philosophy-manifesto">
+<div class="max-w-4xl mx-auto px-6 text-center space-y-6">
+<!-- Auspicious Marigold Line Ornament -->
+<div class="flex items-center justify-center gap-3 text-marigold-accent">
+<span class="h-px w-12 bg-border-warm"></span>
+<span class="text-sm">✦ ॐ ✦</span>
+<span class="h-px w-12 bg-border-warm"></span>
+</div>
+<blockquote class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-snug text-sacred-indigo">
+        “A sacred sanctuary designed without noise, commercial clutter, or anxiety. Just quiet remembrance at your family altar.”
+      </blockquote>
+<p class="font-serif italic text-muted-slate text-lg">
+        — The SetuHome Promise
+      </p>
+</div>
+</section>
+<!-- END: PhilosophyQuoteBanner -->
+<!-- BEGIN: Footer -->
+<footer class="bg-parchment pt-16 pb-12 border-t border-border-warm text-muted-slate text-sm" data-purpose="main-footer">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Footer Column 1: Brand -->
+<div class="md:col-span-2 space-y-4">
+<div class="flex items-center gap-2">
+<span class="font-serif text-2xl text-sacred-indigo font-medium">SetuHome</span>
+<span class="font-sanskrit text-sm text-muted-slate">· सेतु</span>
+</div>
+<p class="max-w-sm text-sm text-muted-slate leading-relaxed">
+            The bridge between roots and wings. Built by diaspora parents and scholars for families preserving timeless ritual in modern homes.
+          </p>
+<div class="text-xs text-muted-slate/80">
+            Proudly independent · No external advertisements ever.
+          </div>
+</div>
+<!-- Footer Column 2: Navigation -->
+<div class="space-y-3">
+<div class="text-xs font-semibold uppercase tracking-wider text-sacred-indigo">Navigation</div>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-sacred-indigo transition-colors" href="#features">Features</a></li>
+<li><a class="hover:text-sacred-indigo transition-colors" href="#festivals">Festivals Calendar</a></li>
+<li><a class="hover:text-sacred-indigo transition-colors" href="#for-kids">Little Setu Bedtime</a></li>
+<li><a class="hover:text-sacred-indigo transition-colors" href="#scripture">Daily Bhagavad Gita</a></li>
+</ul>
+</div>
+<!-- Footer Column 3: Integrity -->
+<div class="space-y-3">
+<div class="text-xs font-semibold uppercase tracking-wider text-sacred-indigo">Sanctuary</div>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-sacred-indigo transition-colors" href="#">Privacy Charter</a></li>
+<li><a class="hover:text-sacred-indigo transition-colors" href="#">Astronomical Methods</a></li>
+<li><a class="hover:text-sacred-indigo transition-colors" href="#">Scholar Advisory</a></li>
+<li><a class="hover:text-sacred-indigo transition-colors" href="#waitlist">Diwali 2024 Waitlist</a></li>
+</ul>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="pt-8 border-t border-border-warm flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+<div>
+          © 2024 SetuHome Inc. All rights reserved.
+        </div>
+<div class="flex items-center gap-6">
+<span>Sunrise synchronization active across 4 continents</span>
+<span class="text-vermilion-dot font-serif">शांतिः शांतिः शांतिः</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+</body></html>
