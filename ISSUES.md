@@ -36,23 +36,23 @@ Done as playback on Today and the verse reader. Gita Listen plays the Apache rec
 
 ## 06. Onboarding
 
-Welcome, city, and the morning time. Three steps. The focus screen stays in the design file and is not in this flow. That question is issue 18.
+Done. Welcome, city, and the morning time. Three steps. City and time stay on this phone. Festival clocks are not printed. The focus screen stays in the design file and is not in this flow. That question is issue 18.
 
 ## 07. Streaks
 
-Count mornings on this phone. Today shows the count. The seven-morning screen marks 7, then 21, 40, and 108.
+Done. Opening Today on a local calendar day counts a morning. Consecutive days add to the run; a missed day starts again at 1. Today shows the count and opens the path screen. Hitting 7, 21, 40, or 108 opens that screen once. The count stays on this phone.
 
 ## 08. Reminders
 
-One morning verse at the chosen time. After issue 09, add the design’s other alerts: festival and tithi, sunset, bedtime, and a muhurat chime. The chime uses a time the API returned.
+Done. One daily local notification at the morning time from onboarding. The copy does not invent a verse. Festival, tithi, sunset, bedtime, and muhurat alerts wait for issue 09. A time that is not returned is not shown.
 
 ## 09. City API
 
-Use Hindu-Panchangam-Legal for sunrise, tithi, and festival timings. City names come from the free City API while the app does not charge. If a source has no time, the screen does not invent one. A temple may differ, and the host can move the household date.
+Done. Sunrise, tithi, and festival days come from `@ishubhamx/panchangam-js` (Hindu-Panchangam-Legal, MIT) for the chosen city. Coordinates ship in `mobile/src/cities.json`; a typed name that is not on that list is looked up with Open-Meteo geocoding (no key on the device). A time that is not returned is not shown. A temple may keep another day. The host can move the household date on Festivals.
 
 ## 10. Diwali guide
 
-The five days and the home puja list from the Diwali screen, with timings from issue 09.
+Done. Five days at home (Dhanteras through Bhai Dooj) for the household city, with dates and a clock only when the calendar returns them. The home list is what to set out, not a copied temple vidhi. A temple may keep another evening. Drik Panchang Lakshmi puja steps stay out until a written grant is filed.
 
 ## 11. Satyanarayan
 

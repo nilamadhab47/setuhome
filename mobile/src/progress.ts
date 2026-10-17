@@ -1,5 +1,7 @@
-const opensKey = "setuhome-read-opens";
-const continueKey = "setuhome-continue";
+import { STORE_KEYS, getItem, setItem } from "./store";
+
+const opensKey = STORE_KEYS.opens;
+const continueKey = STORE_KEYS.continue;
 let opensMemory: Record<string, number> = {};
 let continueMemory: ContinueRead | null = null;
 
@@ -10,9 +12,8 @@ export type ContinueRead = {
 };
 
 function readJson<T>(key: string, fallback: T): T {
-  if (typeof localStorage === "undefined") return fallback;
   try {
-    const parsed = JSON.parse(localStorage.getItem(key) || "null") as T | null;
+    const parsed = JSON.parse(getItem(key) || "null") as T | null;
     return parsed ?? fallback;
   } catch {
     return fallback;
@@ -20,8 +21,7 @@ function readJson<T>(key: string, fallback: T): T {
 }
 
 function writeJson(key: string, value: unknown) {
-  if (typeof localStorage === "undefined") return;
-  localStorage.setItem(key, JSON.stringify(value));
+  setItem(key, JSON.stringify(value));
 }
 
 export function readOpens(): Record<string, number> {

@@ -1,13 +1,17 @@
-const key = "setuhome-saved-verses";
+import { STORE_KEYS, getItem, setItem } from "./store";
+
+const key = STORE_KEYS.saved;
 const memory = new Set<string>();
 
 function read(): string[] {
-  if (typeof localStorage === "undefined") return [...memory];
   try {
-    const parsed = JSON.parse(localStorage.getItem(key) || "[]") as string[];
-    return Array.isArray(parsed) ? parsed : [];
+    const parsed = JSON.parse(getItem(key) || "[]") as string[];
+    const list = Array.isArray(parsed) ? parsed : [];
+    memory.clear();
+    list.forEach((item) => memory.add(item));
+    return list;
   } catch {
-    return [];
+    return [...memory];
   }
 }
 
@@ -22,6 +26,6 @@ export function toggleSaved(ref: string) {
   const list = [...next];
   memory.clear();
   list.forEach((item) => memory.add(item));
-  if (typeof localStorage !== "undefined") localStorage.setItem(key, JSON.stringify(list));
+  setItem(key, JSON.stringify(list));
   return next.has(ref);
 }

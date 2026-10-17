@@ -51,7 +51,7 @@ One local file, not a live call to those APIs.
 - Simple English: an AI explanation of that sourced line, generated offline with prompt `simple-en-v1`, stored in `mobile/src/simple-english.json`. Labeled as not the translator’s words. The Anthropic key stays in `mobile/.env` and is never in the app.
 - Listen: Gita clips are the Apache recording set, addressed by offset in `mobile/src/listen-catalog.json`. Word timings are written by an offline ElevenLabs speech-to-text job. Verses with no recording get an ElevenLabs spoken reading of the transliteration, labeled as not a temple chant. The ElevenLabs key stays in `mobile/.env`. The app never calls ElevenLabs.
 - Guidance: retrieve from that file, then answer. Cite the verse. Do not train on the commentator datasets or the GPT-4.1 questions.
-- Festivals: Hindu-Panchangam-Legal or DevDarsha daily panchang. City coordinates from a geocoder. No kundli.
+- Festivals: `@ishubhamx/panchangam-js` (Hindu-Panchangam-Legal) on the device. City coordinates from the shipped list, or Open-Meteo geocoding for a typed name. No kundli. No API Ninjas key on the phone.
 
 ## First release
 
@@ -62,7 +62,7 @@ The app stays free. No subscription, no in-app purchase, no ads. Paid APIs wait 
 | Call while the app is free | What it fills | Remove when a price is added |
 | --- | --- | --- |
 | [Bhagavad Gita API](https://github.com/vedicscriptures/bhagavad-gita-api) | Gita Hindi, and English until Telang or Arnold is loaded | Yes. Their note limits the feed to a non-monetized app. |
-| [API Ninjas City](https://api-ninjas.com/api/city), free tier | City name to coordinates | Yes, unless the account is on their paid plan. |
+| Open-Meteo Geocoding (no key) | Typed city name to coordinates when it is not in `mobile/src/cities.json` | No. The shipped city list covers the onboarding chips offline. |
 | Sarvam | Stories and any verse that has no recording | Only if that Sarvam plan cannot follow a price. ElevenLabs is the later voice. |
 
 The Gita Listen button uses [Bhagavad-Gita_Audio](https://huggingface.co/datasets/JDhruv14/Bhagavad-Gita_Audio). Those clips are already aligned to the 701 verses. Build the offset map with `python3 scripts/build-listen-catalog.py`. Transcribe timings with `python3 scripts/transcribe-listen.py`. Spoken readings for verses without a clip, and the everyday-words voice-over after the chant: `python3 scripts/speak-verses.py --today` or `--english --gita-chapter 2`. The Sarvam and ElevenLabs keys stay in `mobile/.env` and have to be rotated if they appeared in chat.

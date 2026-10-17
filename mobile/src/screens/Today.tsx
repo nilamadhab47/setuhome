@@ -1,16 +1,23 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Image, Pressable, ScrollView, Share, StyleSheet, Text, View } from "react-native";
+import type { Household } from "../household";
 import { type SpokenSync } from "../listen";
+import { calendarForHousehold, formatFestivalWhen, tithiLine } from "../panchang";
+import { type ReminderState } from "../remind";
 import { isSaved, toggleSaved } from "../saved";
+import { MARKS, markStreakSeen, reachedMark, touchStreak, type Mark } from "../streak";
 import { theme, type } from "../theme";
-import { verseForDate } from "../verse";
+import { verseForDate, verseLabel } from "../verse";
 import { ListenButton } from "./ListenButton";
 import { MeaningBlock } from "./MeaningBlock";
 import { SpokenLines } from "./SpokenLines";
+import { Streak } from "./Streak";
 
 type Props = {
-  streakDays: number;
-  onOpenFestivals: () => void;
+  household: Household;
+  morningLabel?: string;
+  reminder?: ReminderState;
+  onOpenDiwali: () => void;
   onOpenStories: () => void;
 };
 
@@ -29,18 +36,43 @@ function todayLabel(now: Date) {
   }).format(now);
 }
 
-export function Today({ streakDays, onOpenFestivals, onOpenStories }: Props) {
+function previewMark(): Mark | null {
+  const search = typeof window === "undefined" ? undefined : window.location?.search;
+  if (!search) return null;
+  const value = Number(new URLSearchParams(search).get("streak"));
+  return MARKS.includes(value as Mark) ? (value as Mark) : null;
+}
+
+export function Today({ household, morningLabel, reminder, onOpenDiwali, onOpenStories }: Props) {
   const now = new Date();
+  const calendar = useMemo(
+    () => calendarForHousehold(household, new Date(), false),
+    [household.city, household.lat, household.lng, household.tz]
+  );
+  const city = household.city;
   const verse = verseForDate(now);
+  const tithi = tithiLine(calendar.panchang);
+  const diwali = calendar.diwali;
+  const diwaliWhen = diwali && calendar.place ? formatFestivalWhen(diwali, calendar.place.tz) : null;
+  const preview = previewMark();
+  const [streak, setStreak] = useState(() => touchStreak(now));
   const [saved, setSaved] = useState(() => isSaved(verse.ref));
   const [listenNote, setListenNote] = useState("");
   const [sync, setSync] = useState<SpokenSync | null>(null);
+  const hit = preview ?? reachedMark(streak);
+  const [showStreak, setShowStreak] = useState(() => hit !== null);
+  const days = preview ?? streak.count;
+
+  function closeStreak() {
+    if (hit && !preview) setStreak(markStreakSeen(hit));
+    setShowStreak(false);
+  }
 
   async function onShare() {
     const meaning = verse.simple?.simpleEnglish || verse.english;
     const message = meaning
-      ? `${verse.sanskrit.join("\n")}\n\n${meaning}\n\n${verse.ref}`
-      : `${verse.sanskrit.join("\n")}\n\n${verse.ref}`;
+      ? `${verse.sanskrit.join("\n")}\n\n${meaning}\n\n${verseLabel(verse)}`
+      : `${verse.sanskrit.join("\n")}\n\n${verseLabel(verse)}`;
     try {
       await Share.share({ message });
     } catch {
@@ -49,21 +81,33 @@ export function Today({ streakDays, onOpenFestivals, onOpenStories }: Props) {
   }
 
   return (
+    <View style={styles.list}>
     <ScrollView style={styles.list} contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
       <Text style={styles.kicker}>SetuHome</Text>
       <View style={styles.greetRow}>
         <View style={styles.greetCopy}>
           <Text style={styles.title}>{greeting(now)}</Text>
           <Text style={styles.meta}>{todayLabel(now)}</Text>
+          {tithi ? <Text style={styles.meta}>{tithi}</Text> : null}
+          {reminder === "set" && morningLabel ? (
+            <Text style={styles.meta}>Reminder at {morningLabel}</Text>
+          ) : reminder === "denied" ? (
+            <Text style={styles.meta}>Morning reminder needs permission on this phone.</Text>
+          ) : null}
         </View>
-        <View style={styles.streak}>
-          <Text style={styles.streakText}>{streakDays} days</Text>
-        </View>
+        <Pressable
+          style={styles.streak}
+          onPress={() => setShowStreak(true)}
+          accessibilityRole="button"
+          accessibilityLabel={`Morning streak, ${days} days`}
+        >
+          <Text style={styles.streakText}>{days} days</Text>
+        </Pressable>
       </View>
 
       <View style={styles.card}>
         <Image source={require("../../assets/dawn.jpg")} style={styles.art} />
-        <Text style={styles.label}>Verse of the day · {verse.ref}</Text>
+        <Text style={styles.label}>Verse of the day · {verseLabel(verse)}</Text>
         {verse.sanskrit.map((line) => (
           <Text key={line} style={styles.sanskrit}>
             {line}
@@ -94,10 +138,14 @@ export function Today({ streakDays, onOpenFestivals, onOpenStories }: Props) {
       </View>
 
       <View style={styles.pair}>
-        <Pressable style={styles.moment} onPress={onOpenFestivals}>
+        <Pressable style={styles.moment} onPress={onOpenDiwali}>
           <Text style={styles.momentKicker}>Festival</Text>
           <Text style={styles.momentTitle}>Diwali</Text>
-          <Text style={styles.momentBody}>Five days at home. The date comes from your city.</Text>
+          <Text style={styles.momentBody}>
+            {diwaliWhen
+              ? `Five days at home. ${diwaliWhen} in ${city}.`
+              : `Five days at home. The date comes from ${city ? city : "your city"}.`}
+          </Text>
         </Pressable>
         <Pressable style={styles.moment} onPress={onOpenStories}>
           <Text style={styles.momentKicker}>Bedtime</Text>
@@ -106,6 +154,8 @@ export function Today({ streakDays, onOpenFestivals, onOpenStories }: Props) {
         </Pressable>
       </View>
     </ScrollView>
+      {showStreak ? <Streak count={days} city={city} celebrated={hit} onClose={closeStreak} /> : null}
+    </View>
   );
 }
 
@@ -159,6 +209,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     borderWidth: 1,
     borderColor: theme.line,
+    cursor: "pointer",
   },
   streakText: {
     fontFamily: type.sansSemibold,

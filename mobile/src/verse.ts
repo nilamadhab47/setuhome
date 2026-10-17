@@ -1,3 +1,4 @@
+import { previewVerseRef } from "./preview";
 import simpleFile from "./simple-english.json";
 import verses from "./verses.json";
 
@@ -98,8 +99,18 @@ export function versesInGroup(group: string): Verse[] {
 }
 
 export function verseForDate(date = new Date()): Verse {
+  const pinned = previewVerseRef();
+  if (pinned) {
+    const found = byRef.get(pinned);
+    if (found) return found;
+  }
   const day = Math.floor(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) / 86_400_000);
   return list[((Math.imul(day, 1103515245) + 12345) >>> 0) % list.length];
+}
+
+export function verseLabel(verse: Verse): string {
+  if (verse.book === "gita" && previewVerseRef()) return `Mahabharata · ${verse.ref}`;
+  return verse.ref;
 }
 
 export function verseByRef(ref: string): Verse | undefined {

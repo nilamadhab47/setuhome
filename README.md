@@ -1,6 +1,6 @@
 # setuHome
 
-A family-first Hindu practice app for the Indian diaspora: a daily verse from the Bhagavad Gita or the Valmiki Ramayana, a library to read both books, and (next) festival dates for the city you live in.
+A family-first Hindu practice app: a daily verse from the Bhagavad Gita or the Valmiki Ramayana, a library to read both books, and festival dates for the city you live in.
 
 The working name on the screens is **setuHome**. The public name is still open.
 
@@ -8,7 +8,7 @@ The first release does not charge. No subscription, no ads, no in-app purchase.
 
 ## What it is
 
-setuHome is built for households outside India who want the verse on the card to be correct, attributed, and usable in English without inventing a translation at runtime.
+setuHome keeps the verse on the card correct, attributed, and usable in English without inventing a translation at runtime.
 
 - **Today** draws one verse for the calendar day from 701 Gita shlokas and 23,334 Ramayana shlokas. There is no book picker and no mood match.
 - **Sanskrit and IAST** stay on the card.
@@ -16,8 +16,10 @@ setuHome is built for households outside India who want the verse on the card to
 - **In everyday words** is an offline, labeled explanation of that sourced line. It is not the translator’s wording. The original line is one tap away.
 - **Listen** plays a Gita recording, then (where a clip has been generated) the everyday-words voice. The phone never calls a model or a TTS API.
 - **Read** lists Gita adhyāyas and Ramayana kāṇḍas. Search opens a verse. Continue remembers the last opened verse on this phone.
+- **Festivals** calculates sunrise, tithi, and festival days for the city on the phone (Hindu-Panchangam-Legal / `@ishubhamx/panchangam-js`). A time that is not returned is not shown. A temple may keep another day. The host can move the household date.
+- **Diwali** is five days at home for that city, plus a short list of what to set out. A clock is printed only when the calendar returns one.
 
-Guidance, stories, festival clocks, onboarding, and accounts are designed and listed in the work order. They are not in the running app yet.
+Guidance, stories, and accounts are designed and listed in the work order. They are not in the running app yet. Onboarding stores a city and morning time on this phone.
 
 The app does not speak as a deity. Guidance, when it ships, must cite a verse and stay inside the Gita and the Ramayana.
 
@@ -26,14 +28,19 @@ The app does not speak as a deity. Guidance, when it ships, must cite a verse an
 | Area | State |
 | --- | --- |
 | App shell (Expo, five tabs, Sacred Editorial type) | Done |
-| Today: greeting, verse, share, save, streak count | Done |
+| Today: greeting, verse, share, save, streak count | Done (mornings counted on this phone; 7 / 21 / 40 / 108) |
 | Daily verse from the local file | Done |
 | Telang / Dutt English | Done |
 | Everyday-words reading (Gita complete; Ramayana partial) | Done |
 | Read: chapters, sargas, search, continue | Done |
 | Listen: Gita recordings + everyday-words voice-over | Done (voice clips for Gita chapters 2 and 12, and today’s Ramayana fill-in) |
 | Marketing site (`web/`) | Done as a waitlist |
-| Onboarding, city timings, Diwali guide, Satyanarayan, guidance, stories | Not started — see [`ISSUES.md`](ISSUES.md) |
+| Onboarding (welcome, city, morning time) | Done |
+| Streaks (7 / 21 / 40 / 108) | Done |
+| Morning reminder at the chosen time | Done |
+| City timings (sunrise, tithi, festival days) | Done |
+| Diwali guide (five days + home list) | Done |
+| Satyanarayan, guidance, stories | Not started — see [`ISSUES.md`](ISSUES.md) |
 
 Decisions live in [`MVP.md`](MVP.md). Text and recording sources live in [`SOURCES.md`](SOURCES.md). The screens to match are in `design-system/public/stitch/`.
 

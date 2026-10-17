@@ -3,12 +3,12 @@ import { Phone } from "@/components/Phone";
 import { Reveal } from "@/components/Reveal";
 import { WaitlistForm } from "@/components/WaitlistForm";
 
-const cities = ["Edison", "San Jose", "Toronto", "London", "Sydney"];
+const cities = ["Mumbai", "Bengaluru", "Delhi", "Chennai", "London"];
 
 const reasons = [
-  "Festival dates from India don't match your city.",
-  "Your kids ask questions you're not sure how to answer.",
-  "You want the Gita in your day, not just on a shelf.",
+  "A verse each morning, with the chant.",
+  "Festival days and timings for your city.",
+  "The Gita in the day, not only on a shelf.",
 ];
 
 const rooms = [
@@ -54,8 +54,8 @@ const stories = [
 const questions = [
   ["When does SetuHome launch?", "Before Diwali 2026, on iPhone and Android."],
   [
-    "Is it only for people who know Sanskrit?",
-    "No. Every verse has a transliteration. Simple English explains a sourced translation in everyday words. The original translator’s line is one tap away.",
+    "How is a verse shown?",
+    "Sanskrit, transliteration, and a sourced English line. Everyday words explain that line. The original translator’s wording is one tap away.",
   ],
   [
     "Which traditions does it follow?",
@@ -67,8 +67,8 @@ const questions = [
   ],
   ["Is it safe for kids?", "Kids’ mode has stories only: no chat, no ads, no tracking."],
   [
-    "Which countries?",
-    "Built for families in the US, UK, Canada, Australia, UAE, and Singapore, and anywhere else you call home.",
+    "Which city does it use?",
+    "The one you choose. Festival times follow that city. If the calendar has no time, the screen does not invent one.",
   ],
   ["What does it cost?", "The app is free. There is no subscription and there are no ads."],
 ];
@@ -86,20 +86,19 @@ export default function HomePage() {
             Coming this Diwali · iOS and Android
           </p>
           <h1 className="rise rise-2 mt-5 font-serif text-4xl leading-[1.05] text-ink sm:text-6xl lg:text-7xl">
-            Bring home
+            The verse,
             <br />
-            with you.
+            at home.
           </h1>
           <div className="phone-stage my-5 lg:hidden" aria-hidden>
             <Phone />
           </div>
           <p className="rise rise-3 mt-6 max-w-xl border-l-2 border-marigold/70 pr-1 pl-4 font-serif text-lg text-plum italic sm:text-xl">
-            Setu means bridge in Sanskrit: a bridge between the home you grew up in and the home
-            you’re building.
+            Setu means bridge in Sanskrit: from the shloka to the rest of the day.
           </p>
           <p className="rise rise-4 mt-5 max-w-xl text-lg leading-relaxed text-plum">
-            Start each morning with the Gita, celebrate every festival on the right day for your
-            city, and pass the sacred stories on to your kids.
+            Start each morning with the Gita, keep festival days for your city, and hear the
+            stories at home.
           </p>
           <div className="rise rise-4 mt-8 max-w-lg">
             <WaitlistForm anchor />
@@ -126,8 +125,7 @@ export default function HomePage() {
         <Reveal>
           <p className="text-xs tracking-widest uppercase">Why SetuHome</p>
           <h2 className="mx-auto mt-6 max-w-3xl font-serif text-3xl leading-snug sm:text-5xl">
-            “You moved across the world. The festivals, the stories, the shlokas your grandmother
-            knew — they shouldn’t get lost on the way.”
+            The verse, the festival, and the story — in one place at home.
           </h2>
         </Reveal>
         <div className="mx-auto mt-14 grid max-w-4xl gap-8 md:grid-cols-3">
