@@ -49,17 +49,19 @@ export function Diwali({ household, onBack }: Props) {
               accessibilityRole="button"
               accessibilityState={{ selected: on }}
             >
-              <Text style={[styles.chipWhen, on && styles.chipWhenOn]}>{row.when || "Date when returned"}</Text>
               <Text style={[styles.chipName, on && styles.chipNameOn]}>
                 {row.n}. {row.name}
               </Text>
+              {row.when ? (
+                <Text style={[styles.chipWhen, on && styles.chipWhenOn]}>{row.when}</Text>
+              ) : null}
             </Pressable>
           );
         })}
       </ScrollView>
 
       <View style={styles.card}>
-        <Text style={styles.tiny}>{selected.when ? selected.when : "Waiting on the calendar"}</Text>
+        <Text style={styles.tiny}>{selected.when ?? `Day ${selected.n}`}</Text>
         <Text style={styles.cardTitle}>{selected.name}</Text>
         <Text style={styles.body}>{selected.line}</Text>
         {window ? (
@@ -190,6 +192,7 @@ const styles = StyleSheet.create({
     borderColor: theme.marigold,
   },
   chipWhen: {
+    marginTop: 4,
     fontFamily: type.sansSemibold,
     fontSize: 10,
     letterSpacing: 0.4,
@@ -201,7 +204,6 @@ const styles = StyleSheet.create({
     color: theme.ink,
   },
   chipName: {
-    marginTop: 4,
     fontFamily: type.serifSemibold,
     fontSize: 15,
     color: theme.ink,

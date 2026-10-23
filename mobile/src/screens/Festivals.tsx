@@ -42,9 +42,9 @@ export function Festivals({ household, onShiftDay, onOpenDiwali, onOpenCeremony 
   for (const row of calendar.panchang?.festivals ?? []) marked.add(row.day);
   const tithi = tithiLine(calendar.panchang);
   const todayFestivals = uniqueHits(calendar.panchang?.festivals ?? []);
-  const later = uniqueHits(
-    calendar.upcoming.filter((row) => row.day > calendar.day && row.category === "major")
-  ).slice(0, 12);
+  const laterAll = uniqueHits(calendar.upcoming.filter((row) => row.day > calendar.day));
+  const laterMajor = laterAll.filter((row) => row.category === "major");
+  const later = (laterMajor.length ? laterMajor : laterAll).slice(0, 12);
 
   return (
     <ScrollView style={styles.list} contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
@@ -60,7 +60,11 @@ export function Festivals({ household, onShiftDay, onOpenDiwali, onOpenCeremony 
 
       <Pressable style={styles.fest} onPress={onOpenDiwali} accessibilityRole="button" accessibilityLabel="Open Diwali guide">
         <Text style={styles.festName}>Diwali · five days at home</Text>
-        <Text style={styles.festTime}>Dates and a clock only when the calendar returns them.</Text>
+        <Text style={styles.festTime}>
+          {calendar.diwali
+            ? `Lakshmi puja ${formatFestivalWhen(calendar.diwali, zone)} in ${household.city}.`
+            : "Five named days. A date is shown when the calendar has one."}
+        </Text>
       </Pressable>
       <Pressable
         style={styles.fest}
@@ -145,7 +149,7 @@ export function Festivals({ household, onShiftDay, onOpenDiwali, onOpenCeremony 
           </View>
         ))
       ) : (
-        <Text style={styles.empty}>No festival returned for this day.</Text>
+        <Text style={styles.empty}>No named festival on this day.</Text>
       )}
 
       <Text style={styles.section}>Coming up</Text>
@@ -161,7 +165,7 @@ export function Festivals({ household, onShiftDay, onOpenDiwali, onOpenCeremony 
           </Pressable>
         ))
       ) : (
-        <Text style={styles.empty}>No upcoming festival returned for this city.</Text>
+        <Text style={styles.empty}>No upcoming festival in the next few weeks.</Text>
       )}
     </ScrollView>
   );

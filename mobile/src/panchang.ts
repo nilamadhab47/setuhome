@@ -54,7 +54,7 @@ function clockInZone(value: Date | null | undefined, timeZone: string): string |
       timeZone,
       hour: "numeric",
       minute: "2-digit",
-      hourCycle: "h12",
+      hour12: true,
     }).format(value);
   } catch {
     return undefined;
@@ -86,11 +86,15 @@ function shortDayLabel(ymd: string, timeZone: string): string {
   }
 }
 
+function asDate(value: Date | string | number | undefined | null): Date | null {
+  if (value == null) return null;
+  const date = value instanceof Date ? value : new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
 function festivalDay(festival: Festival, timeZone: string, fallback: string): string {
-  const instant = festival.date ?? festival.startDate;
-  if (instant && !Number.isNaN(new Date(instant).getTime())) {
-    return ymdInZone(new Date(instant), timeZone);
-  }
+  const instant = asDate(festival.date) ?? asDate(festival.startDate);
+  if (instant) return ymdInZone(instant, timeZone);
   return fallback;
 }
 
@@ -121,7 +125,17 @@ function observerFor(place: Place) {
 
 function optionsFor(place: Place, date: Date) {
   const timezoneOffset = timezoneOffsetMinutes(place.tz, date);
-  return timezoneOffset == null ? undefined : { timezoneOffset };
+  return Number.isFinite(timezoneOffset) ? { timezoneOffset: timezoneOffset as number } : undefined;
+}
+
+function readPanchangam(place: Place, date: Date) {
+  const observer = observerFor(place);
+  const options = optionsFor(place, date);
+  try {
+    return getPanchangam(date, observer, options);
+  } catch {
+    return getPanchangam(date, observer);
+  }
 }
 
 export function dayPanchang(place: Place, ymd: string): DayPanchang | null {
@@ -129,7 +143,7 @@ export function dayPanchang(place: Place, ymd: string): DayPanchang | null {
   if (dayCache.has(key)) return dayCache.get(key) ?? null;
   try {
     const date = noonOnYmd(ymd, place.tz);
-    const panchang = getPanchangam(date, observerFor(place), optionsFor(place, date));
+    const panchang = readPanchangam(place, date);
     const tithiName = panchang.tithis?.find((row) => row.index === panchang.tithi)?.name;
     const row: DayPanchang = {
       city: place.name,
@@ -159,11 +173,12 @@ export function upcomingFestivals(place: Place, ymd: string, days = 45): Festiva
   if (cached) return cached;
   try {
     const date = noonOnYmd(ymd, place.tz);
+    const timezoneOffset = timezoneOffsetMinutes(place.tz, date);
     const rows = getUpcomingFestivals({
       date,
       observer: observerFor(place),
       days,
-      timezoneOffset: timezoneOffsetMinutes(place.tz, date) ?? undefined,
+      ...(timezoneOffset == null ? {} : { timezoneOffset }),
     });
     const hits = rows.map((festival) => toHit(festival, place.tz, ymd));
     upcomingCache.set(key, hits);

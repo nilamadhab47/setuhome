@@ -94,14 +94,25 @@ export function timezoneOffsetMinutes(timeZone: string, date: Date): number | nu
   try {
     const parts = new Intl.DateTimeFormat("en-US", {
       timeZone,
-      timeZoneName: "longOffset",
-      hour: "numeric",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
     }).formatToParts(date);
-    const name = parts.find((part) => part.type === "timeZoneName")?.value ?? "";
-    const match = name.match(/GMT([+-])(\d{1,2})(?::?(\d{2}))?/i);
-    if (!match) return null;
-    const sign = match[1] === "-" ? -1 : 1;
-    return sign * (Number(match[2]) * 60 + Number(match[3] || 0));
+    const value = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+    const asUtc = Date.UTC(
+      Number(value.year),
+      Number(value.month) - 1,
+      Number(value.day),
+      Number(value.hour),
+      Number(value.minute),
+      Number(value.second),
+    );
+    if (!Number.isFinite(asUtc)) return null;
+    return Math.round((asUtc - date.getTime()) / 60_000);
   } catch {
     return null;
   }
