@@ -2,7 +2,7 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-parchment/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 lg:h-20 lg:px-8">
-        <a href="#top" className="flex min-w-0 items-center gap-2">
+        <a href="/" className="flex min-w-0 items-center gap-2">
           <span className="shrink-0 text-marigold" aria-hidden>
             <Lotus />
           </span>
@@ -10,7 +10,7 @@ export function SiteHeader() {
           <span className="shrink-0 font-devanagari text-sm text-plum">· सेतु</span>
         </a>
         <a
-          href="#waitlist"
+          href="/#waitlist"
           className="rounded-full bg-marigold px-4 py-2 text-sm font-medium text-ink hover:bg-marigold-deep"
         >
           Join

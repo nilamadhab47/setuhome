@@ -3,9 +3,16 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms · SetuHome",
+  title: "Terms",
   description:
     "Terms for the SetuHome website and the free iPhone and Android app: scripture, festivals, guidance, and stories for families.",
+  alternates: { canonical: "/terms" },
+  openGraph: {
+    url: "/terms",
+    title: "Terms · SetuHome",
+    description:
+      "Terms for the SetuHome website and the free iPhone and Android app: scripture, festivals, guidance, and stories for families.",
+  },
 };
 
 export default function TermsPage() {

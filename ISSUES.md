@@ -4,7 +4,7 @@ Follow this list from the top. Each issue starts when the one above it is done, 
 
 The first release does not charge. No subscription, no ads, no family price. Use the free sources in `SOURCES.md`. Paid APIs are a later switch, not work on this list. The Star Publications scan, `279.pdf`, is not a text source.
 
-The app shell is `mobile/`. The public site is `site/`. Run the app with `pnpm web` inside `mobile/`.
+The app shell is `mobile/`. The public site is `web/`, at setuhome.xyz. Run the app with `pnpm web` inside `mobile/`.
 
 ## 01. App shell
 
@@ -88,6 +88,6 @@ After the app is in people’s hands, ask whether “what would you like help wi
 
 ## 19. Landing page
 
-The public site is the Next.js app in `web/`. Run it with `pnpm dev` inside `web/`. Home, features, festivals, for kids, scripture, FAQ, privacy, terms, and contact are pages. The homepage phone is a full device, including on a narrow screen. The waitlist confirms on the page and keeps the address in that browser.
+The public site is the Next.js app in `web/`, at [setuhome.xyz](https://setuhome.xyz). Run it with `pnpm dev` inside `web/`. Home, features, festivals, for kids, scripture, FAQ, privacy, terms, and contact are pages. The homepage phone is a full device, including on a narrow screen. The waitlist confirms on the page, sends an invite through Resend, and keeps a copy of the address in that browser.
 
 The app is described as free. Festival clocks are not printed. The guidance sample cites Bhagavad Gita 2.47 and does not speak as Krishna.

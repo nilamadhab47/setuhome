@@ -3,9 +3,16 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy · SetuHome",
+  title: "Privacy",
   description:
     "How SetuHome handles data on the website and in the iPhone and Android app. No ads, no sale of data, and no tracking across other apps.",
+  alternates: { canonical: "/privacy" },
+  openGraph: {
+    url: "/privacy",
+    title: "Privacy · SetuHome",
+    description:
+      "How SetuHome handles data on the website and in the iPhone and Android app. No ads, no sale of data, and no tracking across other apps.",
+  },
 };
 
 const practices = [
@@ -23,7 +30,7 @@ export default function PrivacyPage() {
     <article className="mx-auto max-w-3xl px-5 pt-32 pb-24">
       <p className="text-xs tracking-widest text-marigold uppercase">Privacy</p>
       <h1 className="mt-4 font-serif text-4xl text-ink sm:text-5xl">Privacy policy</h1>
-      <p className="mt-4 text-sm text-plum">Last updated 11 October 2026</p>
+      <p className="mt-4 text-sm text-plum">Last updated 23 October 2026</p>
       <p className="mt-6 leading-relaxed text-plum">
         This policy covers the SetuHome website and the SetuHome app on iPhone and Android. It is
         the policy to use for the Apple App Store and Google Play listings. SetuHome is operated
@@ -38,10 +45,10 @@ export default function PrivacyPage() {
           no chat, and no microphone.
         </p>
         <p>
-          On this website, a waitlist address stays in your browser until a mail list is connected.
-          It is not sent to a server from the page. In the app, we keep what the feature needs: a
-          city, a morning time, and, if you ask a question or play a story, the text required to
-          answer or to speak.
+          On this website, joining the waitlist sends your email to Resend so we can send the invite
+          and write when the app is ready. A copy also stays in your browser. In the app, we keep
+          what the feature needs: a city, a morning time, and, if you ask a question or play a story,
+          the text required to answer or to speak.
         </p>
       </Section>
 
@@ -60,10 +67,11 @@ export default function PrivacyPage() {
 
       <Section title="The website">
         <p>
-          Joining the waitlist writes the email address into local storage on that phone or
-          computer. You can clear it by clearing the site data in the browser. The contact form on
-          the home page also keeps the note on that device. Neither one is transmitted to us from
-          the page as it works today.
+          Joining the waitlist sends the email address to Resend, which we use only to send the
+          invite and later notes about the app. A copy is also written into local storage on that
+          phone or computer, which you can clear with the site data in the browser. The contact form
+          emails your name, address, and note to us. We do not add a waitlist address to an
+          advertising list.
         </p>
         <p>
           The site does not use advertising cookies, and it does not load a third-party analytics
@@ -166,7 +174,8 @@ export default function PrivacyPage() {
           you. We do not use it for a purpose that is different from the one named above.
         </p>
         <p>
-          A waitlist address in the browser stays until you clear it. An account stays until you
+          A waitlist address stays with Resend until you ask us to delete it, and a copy in the
+          browser stays until you clear it. An account stays until you
           delete it. A guidance question is kept only as long as needed to return the answer and to
           investigate abuse, and not as a marketing list. Server logs that contain an IP address
           are kept for a short security window and then deleted or aggregated. Story audio cached
@@ -176,12 +185,12 @@ export default function PrivacyPage() {
 
       <Section title="Where it is processed">
         <p>
-          SetuHome is operated from India. A city calculation, a spoken story, or a guidance reply
-          may be processed on a server in India or in the country of that provider. If you live in
-          the United Kingdom, the European Economic Area, Canada, Australia, the United Arab
-          Emirates, Singapore, the United States, or elsewhere, your information may leave your
-          country for that purpose. We use providers that process it only on our instructions, over
-          an encrypted connection (HTTPS).
+          SetuHome is operated from India. Waitlist and contact mail is sent through Resend. A city
+          calculation, a spoken story, or a guidance reply may be processed on a server in India or
+          in the country of that provider. If you live in the United Kingdom, the European Economic
+          Area, Canada, Australia, the United Arab Emirates, Singapore, the United States, or
+          elsewhere, your information may leave your country for that purpose. We use providers that
+          process it only on our instructions, over an encrypted connection (HTTPS).
         </p>
       </Section>
 

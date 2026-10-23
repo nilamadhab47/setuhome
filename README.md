@@ -59,7 +59,7 @@ setuHome/
 └── SOURCES.md        What we may copy, what we must not
 ```
 
-API keys belong in `mobile/.env` (gitignored). They are never bundled into the app.
+API keys belong in `mobile/.env` and `web/.env.local` (gitignored). They are never bundled into the app.
 
 ## Requirements
 
@@ -95,7 +95,7 @@ pnpm install
 pnpm dev            # http://localhost:3000
 ```
 
-Privacy and terms are routes on that site. The waitlist stores an address in the browser in this build; it is not a production backend.
+The live site is [setuhome.xyz](https://setuhome.xyz). Privacy and terms are routes on that site. The waitlist sends an invite through Resend (`RESEND_API_KEY` in `web/.env.local`) and also keeps a copy of the address in the browser.
 
 ## Design preview
 

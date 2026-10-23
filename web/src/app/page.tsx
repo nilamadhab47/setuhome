@@ -298,8 +298,7 @@ export default function HomePage() {
         <p className="text-xs tracking-widest text-marigold uppercase">Contact</p>
         <h2 className="mt-4 font-serif text-4xl">Write to us.</h2>
         <p className="mt-4 text-plum">
-          A note about a verse, a city, or the waitlist. This form keeps the message on this device
-          for now.
+          A note about a verse, a city, or the waitlist. It comes to us by email.
         </p>
         <ContactForm />
         </Reveal>
