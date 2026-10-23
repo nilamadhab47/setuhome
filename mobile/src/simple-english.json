@@ -10596,6 +10596,20 @@
       "model": "claude-haiku-4-5-20251001",
       "generatedAt": "2026-10-11",
       "source": "Kashinath Trimbak Telang, 1882"
+    },
+    "Valmiki Ramayana 6.58.41": {
+      "simpleEnglish": "Nila (a monkey warrior) could not stop the terrible arrows coming from Prahasta (a Rakshasa general). With his eyes closed, Nila stood firm and endured the shower of arrows.",
+      "keyIdea": "A warrior can hold his ground against overwhelming force through sheer strength and will.",
+      "contextNote": "This verse describes a moment in the battle between Rama's monkey army and the Rakshasas. Nila is one of Rama's generals. Prahasta is a powerful enemy commander.",
+      "difficultTerms": [
+        "Rakshasa",
+        "arrowy vollies"
+      ],
+      "needsReview": false,
+      "promptVersion": "simple-en-v1",
+      "model": "claude-haiku-4-5-20251001",
+      "generatedAt": "2026-10-23",
+      "source": "M. N. Dutt, 1891–94"
     }
   }
 }

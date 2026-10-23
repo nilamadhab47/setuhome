@@ -56,7 +56,7 @@ Done. Five days at home (Dhanteras through Bhai Dooj) for the household city, wi
 
 ## 11. Satyanarayan
 
-Not in the export. Add it. One named tradition, steps in order, reviewed before they are shown. Next and previous always work.
+Done. One named tradition: Home Satyanarayan. Six steps in order (gather, lamp, sankalpa, katha, aarti, prasad). Next and previous wrap, so they always work. The sequence is original household copy, not a pasted temple vidhi. The namaskara on the katha step is the traditional ॐ नमो भगवते सत्यनारायणाय. The host still reads the katha from the book at home. Divine Sansar / Vaidic Pujas / Drik steps stay out until a written grant is filed.
 
 ## 12. Guest link
 

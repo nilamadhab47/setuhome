@@ -4,12 +4,15 @@ import {
   useAudioPlaylist,
   useAudioPlaylistStatus,
 } from "expo-audio";
+import * as Speech from "expo-speech";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import {
   LISTEN_FAILED,
   LISTEN_MISSING,
+  LISTEN_WAIT,
   hasListenClip,
+  listenLabel,
   partSource,
   resolveListenClip,
   type ListenClip,
@@ -29,8 +32,10 @@ export function ListenButton({
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
   const [deck, setDeck] = useState(0);
+  const [speechOn, setSpeechOn] = useState(false);
   const playAfter = useRef(false);
   const deaths = useRef(0);
+  const speechGen = useRef(0);
   const onSyncRef = useRef(onSync);
   onSyncRef.current = onSync;
   const ready = hasListenClip(verse);
@@ -40,21 +45,25 @@ export function ListenButton({
     setNote("");
     setClip(undefined);
     setBusy(false);
+    setSpeechOn(false);
     playAfter.current = false;
     deaths.current = 0;
+    speechGen.current += 1;
     onSyncRef.current?.(null);
+    void Speech.stop();
     if (!ready) {
-      console.log("[listen] no clip", verse.ref);
-      return;
+      console.log("[listen] no bundled clip", verse.ref);
+      return () => {
+        alive = false;
+        onSyncRef.current?.(null);
+        void Speech.stop();
+      };
     }
-    setBusy(true);
     resolveListenClip(verse)
       .then((next) => {
         if (!alive) return;
-        setBusy(false);
         if (!next) {
           console.log("[listen] resolve empty", verse.ref);
-          setNote(LISTEN_FAILED);
           return;
         }
         console.log("[listen] loaded", verse.ref, {
@@ -65,33 +74,98 @@ export function ListenButton({
       })
       .catch((error) => {
         console.log("[listen] resolve failed", verse.ref, String(error));
-        if (alive) {
-          setBusy(false);
-          setNote(LISTEN_FAILED);
-        }
       });
     return () => {
       alive = false;
       onSyncRef.current?.(null);
+      void Speech.stop();
     };
   }, [verse.ref, ready]);
+
+  async function speakFallback() {
+    const chant = (verse.transliteration.join(" ") || verse.sanskrit.join(" ")).trim();
+    if (!chant) {
+      setNote(LISTEN_MISSING);
+      return;
+    }
+    const gen = ++speechGen.current;
+    const english = verse.simple?.simpleEnglish?.trim();
+    await Speech.stop();
+    setSpeechOn(true);
+    setNote("");
+    Speech.speak(chant, {
+      language: "en-IN",
+      rate: 0.78,
+      onDone: () => {
+        if (gen !== speechGen.current) return;
+        if (!english) {
+          setSpeechOn(false);
+          return;
+        }
+        Speech.speak(english, {
+          language: "en-IN",
+          onDone: () => {
+            if (gen === speechGen.current) setSpeechOn(false);
+          },
+          onStopped: () => {
+            if (gen === speechGen.current) setSpeechOn(false);
+          },
+          onError: () => {
+            if (gen === speechGen.current) {
+              setSpeechOn(false);
+              setNote(LISTEN_FAILED);
+            }
+          },
+        });
+      },
+      onStopped: () => {
+        if (gen === speechGen.current) setSpeechOn(false);
+      },
+      onError: () => {
+        if (gen === speechGen.current) {
+          setSpeechOn(false);
+          setNote(LISTEN_FAILED);
+        }
+      },
+    });
+  }
 
   if (!clip) {
     return (
       <ListenChrome
-        playing={false}
+        playing={speechOn}
         busy={busy}
         part="chant"
         progress={0}
-        note={!ready && note ? LISTEN_MISSING : note}
-        caption=""
+        note={note}
+        caption={speechOn ? listenLabel(verse) : ""}
         onPress={() => {
-          if (!ready) {
-            setNote(note ? "" : LISTEN_MISSING);
+          if (busy) return;
+          if (speechOn) {
+            speechGen.current += 1;
+            setSpeechOn(false);
+            void Speech.stop();
             return;
           }
           playAfter.current = true;
-          setNote("");
+          setBusy(true);
+          setNote(LISTEN_WAIT);
+          void resolveListenClip(verse)
+            .then(async (next) => {
+              if (next) {
+                console.log("[listen] loaded on tap", verse.ref);
+                setClip(next);
+                setNote("");
+                return;
+              }
+              console.log("[listen] fallback speech", verse.ref);
+              await speakFallback();
+            })
+            .catch(async (error) => {
+              console.log("[listen] tap resolve failed", verse.ref, String(error));
+              await speakFallback();
+            })
+            .finally(() => setBusy(false));
         }}
       />
     );
@@ -175,7 +249,7 @@ function ListenDeck({
   const active = part === "english" ? clip.english : clip.chant;
   const caption = clip.english
     ? active?.label ?? ""
-    : `${clip.chant.label} The everyday-words voice is not on the phone for this verse.`;
+    : clip.chant.label;
 
   useEffect(() => {
     void setAudioModeAsync({ playsInSilentMode: true, interruptionMode: "doNotMix" });
@@ -380,7 +454,7 @@ function ListenChrome({
         accessibilityLabel={playing ? "Pause verse" : "Listen to verse"}
       >
         <Text style={[styles.listenText, playing && styles.listenTextOn]}>
-          {playing ? "Pause" : busy ? "Loading" : part === "english" ? "English" : "Listen"}
+          {playing ? "Pause" : busy ? "Please wait" : part === "english" ? "English" : "Listen"}
         </Text>
       </Pressable>
       {playing || progress > 0 ? (

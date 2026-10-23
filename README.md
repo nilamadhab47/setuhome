@@ -18,6 +18,7 @@ setuHome keeps the verse on the card correct, attributed, and usable in English 
 - **Read** lists Gita adhyāyas and Ramayana kāṇḍas. Search opens a verse. Continue remembers the last opened verse on this phone.
 - **Festivals** calculates sunrise, tithi, and festival days for the city on the phone (Hindu-Panchangam-Legal / `@ishubhamx/panchangam-js`). A time that is not returned is not shown. A temple may keep another day. The host can move the household date.
 - **Diwali** is five days at home for that city, plus a short list of what to set out. A clock is printed only when the calendar returns one.
+- **Satyanarayan** is one named household tradition (Home Satyanarayan), six steps in order. Next and previous always work. The katha is read from the book at home; a pasted temple vidhi is not shown.
 
 Guidance, stories, and accounts are designed and listed in the work order. They are not in the running app yet. Onboarding stores a city and morning time on this phone.
 
@@ -40,7 +41,8 @@ The app does not speak as a deity. Guidance, when it ships, must cite a verse an
 | Morning reminder at the chosen time | Done |
 | City timings (sunrise, tithi, festival days) | Done |
 | Diwali guide (five days + home list) | Done |
-| Satyanarayan, guidance, stories | Not started — see [`ISSUES.md`](ISSUES.md) |
+| Satyanarayan (Home Satyanarayan, next / previous) | Done |
+| Guidance, stories | Not started — see [`ISSUES.md`](ISSUES.md) |
 
 Decisions live in [`MVP.md`](MVP.md). Text and recording sources live in [`SOURCES.md`](SOURCES.md). The screens to match are in `design-system/public/stitch/`.
 

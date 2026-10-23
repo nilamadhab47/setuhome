@@ -8,6 +8,7 @@ type Props = {
   household: Household;
   onShiftDay: (day: string | null) => void;
   onOpenDiwali: () => void;
+  onOpenCeremony: () => void;
 };
 
 const STRIP = [-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7];
@@ -34,7 +35,7 @@ function dayNumber(ymd: string) {
   return ymd.slice(8, 10).replace(/^0/, "") || ymd;
 }
 
-export function Festivals({ household, onShiftDay, onOpenDiwali }: Props) {
+export function Festivals({ household, onShiftDay, onOpenDiwali, onOpenCeremony }: Props) {
   const calendar = calendarForHousehold(household);
   const zone = calendar.place?.tz || "UTC";
   const marked = new Set(calendar.upcoming.map((row) => row.day));
@@ -60,6 +61,15 @@ export function Festivals({ household, onShiftDay, onOpenDiwali }: Props) {
       <Pressable style={styles.fest} onPress={onOpenDiwali} accessibilityRole="button" accessibilityLabel="Open Diwali guide">
         <Text style={styles.festName}>Diwali · five days at home</Text>
         <Text style={styles.festTime}>Dates and a clock only when the calendar returns them.</Text>
+      </Pressable>
+      <Pressable
+        style={styles.fest}
+        onPress={onOpenCeremony}
+        accessibilityRole="button"
+        accessibilityLabel="Open Home Satyanarayan"
+      >
+        <Text style={styles.festName}>Home Satyanarayan</Text>
+        <Text style={styles.festTime}>One named tradition. Next and previous always work.</Text>
       </Pressable>
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.strip}>

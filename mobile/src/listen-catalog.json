@@ -21306,6 +21306,208 @@
           "end": 17.554
         }
       ]
+    },
+    "Valmiki Ramayana 6.58.41": {
+      "kind": "spoken",
+      "file": "ramayana/6.58.41.mp3",
+      "source": "ElevenLabs spoken reading",
+      "label": "A spoken reading of this verse, not a temple chant.",
+      "model": "eleven_multilingual_v2",
+      "voice": "JBFqnCBsd6RMkjVDRZzb",
+      "words": [
+        {
+          "text": "tasya",
+          "start": 0.0,
+          "end": 0.372
+        },
+        {
+          "text": "bāṇagaṇān",
+          "start": 0.418,
+          "end": 0.871
+        },
+        {
+          "text": "ghorān",
+          "start": 0.94,
+          "end": 1.219
+        },
+        {
+          "text": "rākṣasasya",
+          "start": 1.289,
+          "end": 2.02
+        },
+        {
+          "text": "mahābalaḥ",
+          "start": 2.101,
+          "end": 2.647
+        },
+        {
+          "text": "apārayan",
+          "start": 2.694,
+          "end": 3.135
+        },
+        {
+          "text": "vārayituṃ",
+          "start": 3.204,
+          "end": 3.727
+        },
+        {
+          "text": "pratyagṛhṇānnimīlitaḥ",
+          "start": 3.773,
+          "end": 5.48
+        }
+      ],
+      "englishFile": "english/ramayana/6.58.41.mp3",
+      "englishSource": "simple-en-v1",
+      "englishLabel": "The meaning after the chant.",
+      "englishModel": "eleven_multilingual_v2",
+      "englishVoice": "JBFqnCBsd6RMkjVDRZzb",
+      "englishWords": [
+        {
+          "text": "Nila",
+          "start": 0.0,
+          "end": 0.453
+        },
+        {
+          "text": "(a",
+          "start": 0.534,
+          "end": 0.662
+        },
+        {
+          "text": "monkey",
+          "start": 0.743,
+          "end": 1.045
+        },
+        {
+          "text": "warrior)",
+          "start": 1.103,
+          "end": 1.567
+        },
+        {
+          "text": "could",
+          "start": 1.683,
+          "end": 1.858
+        },
+        {
+          "text": "not",
+          "start": 1.892,
+          "end": 2.009
+        },
+        {
+          "text": "stop",
+          "start": 2.055,
+          "end": 2.299
+        },
+        {
+          "text": "the",
+          "start": 2.368,
+          "end": 2.438
+        },
+        {
+          "text": "terrible",
+          "start": 2.485,
+          "end": 2.868
+        },
+        {
+          "text": "arrows",
+          "start": 2.926,
+          "end": 3.274
+        },
+        {
+          "text": "coming",
+          "start": 3.332,
+          "end": 3.599
+        },
+        {
+          "text": "from",
+          "start": 3.646,
+          "end": 3.773
+        },
+        {
+          "text": "Prahasta",
+          "start": 3.831,
+          "end": 4.423
+        },
+        {
+          "text": "(a",
+          "start": 4.632,
+          "end": 4.876
+        },
+        {
+          "text": "Rakshasa",
+          "start": 4.957,
+          "end": 5.515
+        },
+        {
+          "text": "general).",
+          "start": 5.584,
+          "end": 6.153
+        },
+        {
+          "text": "With",
+          "start": 6.664,
+          "end": 6.85
+        },
+        {
+          "text": "his",
+          "start": 6.885,
+          "end": 6.989
+        },
+        {
+          "text": "eyes",
+          "start": 7.047,
+          "end": 7.245
+        },
+        {
+          "text": "closed",
+          "start": 7.303,
+          "end": 7.709
+        },
+        {
+          "text": "Nila",
+          "start": 7.941,
+          "end": 8.22
+        },
+        {
+          "text": "stood",
+          "start": 8.278,
+          "end": 8.51
+        },
+        {
+          "text": "firm",
+          "start": 8.58,
+          "end": 8.916
+        },
+        {
+          "text": "and",
+          "start": 9.033,
+          "end": 9.207
+        },
+        {
+          "text": "endured",
+          "start": 9.265,
+          "end": 9.683
+        },
+        {
+          "text": "the",
+          "start": 9.718,
+          "end": 9.787
+        },
+        {
+          "text": "shower",
+          "start": 9.834,
+          "end": 10.147
+        },
+        {
+          "text": "of",
+          "start": 10.205,
+          "end": 10.263
+        },
+        {
+          "text": "arrows.",
+          "start": 10.321,
+          "end": 11.099
+        }
+      ]
     }
   }
 }

@@ -80,7 +80,7 @@ These can ship in a paid app. Build the verse file from them so the later swap i
 | Stories | Arthur W. Ryder, *The Panchatantra*, 1925. The Purna Vidya PDF stays out. |
 | Festival times | [Hindu-Panchangam-Legal](https://github.com/ishubhamx/Hindu-Panchangam-Legal), MIT |
 | Sanskrit chant, if ElevenLabs is dropped | [Vāgdhenu](https://github.com/prathoshap/vagdhenu), Apache-2.0 |
-| Ceremonies | The granted Satyanarayan and Diwali steps, once the written grant is filed |
+| Ceremonies | Home Satyanarayan is original household copy in `mobile/src/ceremony.ts` (lamp, sankalpa, katha, aarti, prasad). Granted Divine Sansar / Vaidic Pujas / Drik steps, once the written grant is filed |
 | City lookup after a price | API Ninjas on a paid plan, or a city list shipped in the app |
 | Festival API after a price | DevDarsha daily panchang, on a paid plan |
 

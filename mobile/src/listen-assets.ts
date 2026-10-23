@@ -1,6 +1,7 @@
 /* Generated. Bundled chant and English voice-over clips. */
 export const listenAssets: Record<string, number> = {
   "Valmiki Ramayana 6.40.23": require("../assets/listen/ramayana/6.40.23.mp3"),
+  "Valmiki Ramayana 6.58.41": require("../assets/listen/ramayana/6.58.41.mp3"),
 };
 
 export const listenEnglishAssets: Record<string, number> = {
@@ -97,4 +98,5 @@ export const listenEnglishAssets: Record<string, number> = {
   "Bhagavad Gita 2.8": require("../assets/listen/english/gita/2.8.mp3"),
   "Bhagavad Gita 2.9": require("../assets/listen/english/gita/2.9.mp3"),
   "Valmiki Ramayana 6.40.23": require("../assets/listen/english/ramayana/6.40.23.mp3"),
+  "Valmiki Ramayana 6.58.41": require("../assets/listen/english/ramayana/6.58.41.mp3"),
 };

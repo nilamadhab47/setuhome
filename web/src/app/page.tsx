@@ -41,7 +41,7 @@ const rooms = [
 const festivals = [
   ["Diwali", "Five days at home, with the puja steps in order."],
   ["Karva Chauth", "The moonrise for your city, when the calendar returns it."],
-  ["Satyanarayan", "One named tradition, next and previous, reviewed before it is shown."],
+  ["Satyanarayan", "Home Satyanarayan: six steps at home. Next and previous always work."],
   ["A guest link", "Someone at the gathering can follow the steps without installing the app."],
 ];
 

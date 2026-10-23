@@ -4,10 +4,12 @@ import { NotoSerifDevanagari_400Regular } from "@expo-google-fonts/noto-serif-de
 import { StatusBar } from "expo-status-bar";
 import { useFonts } from "expo-font";
 import { useEffect, useState } from "react";
-import { Pressable, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { Linking, Pressable, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { writeCeremonyStep } from "./src/ceremony";
 import { formatMorning, readHousehold, writeHousehold, type Household } from "./src/household";
-import { wantOnboard } from "./src/preview";
+import { ceremonyStepFromHref, guideFromHref, wantOnboard } from "./src/preview";
 import { syncMorningReminder, type ReminderState } from "./src/remind";
+import { Ceremony } from "./src/screens/Ceremony";
 import { Diwali } from "./src/screens/Diwali";
 import { Festivals } from "./src/screens/Festivals";
 import { Later } from "./src/screens/Later";
@@ -31,6 +33,15 @@ function onboardFromUrl() {
   return wantOnboard();
 }
 
+type Guide = "diwali" | "satyanarayan";
+
+function applyHref(href: string | null, setGuide: (guide: Guide | null) => void) {
+  const step = ceremonyStepFromHref(href);
+  if (step != null) writeCeremonyStep(step);
+  const next = guideFromHref(href);
+  if (next) setGuide(next);
+}
+
 const laterCopy: Record<Exclude<Tab, "Today" | "Read" | "Festivals">, string> = {
   Guidance: "The conversation is free. An answer cites a verse from the Gita or the Ramayana and does not speak as a deity.",
   Stories: "Little Setu and the bedtime player come next. Stories are for listening at home.",
@@ -51,7 +62,7 @@ export default function App() {
   const [household, setHousehold] = useState<Household | null>(null);
   const [forceOnboard, setForceOnboard] = useState(onboardFromUrl);
   const [reminder, setReminder] = useState<ReminderState>("off");
-  const [guide, setGuide] = useState<"diwali" | null>(null);
+  const [guide, setGuide] = useState<Guide | null>(() => guideFromHref());
 
   useEffect(() => {
     let cancelled = false;
@@ -70,6 +81,16 @@ export default function App() {
     if (!booted) return;
     void syncMorningReminder(household).then(setReminder);
   }, [booted, household]);
+
+  useEffect(() => {
+    if (!booted) return;
+    function onUrl(href: string | null) {
+      applyHref(href, setGuide);
+    }
+    void Linking.getInitialURL().then(onUrl);
+    const sub = Linking.addEventListener("url", (event) => onUrl(event.url));
+    return () => sub.remove();
+  }, [booted]);
 
   if (!fontsLoaded || !booted) {
     return <View style={styles.loading} />;
@@ -95,12 +116,15 @@ export default function App() {
       <View style={styles.body}>
         {guide === "diwali" ? (
           <Diwali household={household} onBack={() => setGuide(null)} />
+        ) : guide === "satyanarayan" ? (
+          <Ceremony household={household} onBack={() => setGuide(null)} />
         ) : tab === "Today" ? (
           <Today
             household={household}
             morningLabel={formatMorning(household.morningHour, household.morningMinute)}
             reminder={reminder}
             onOpenDiwali={() => setGuide("diwali")}
+            onOpenCeremony={() => setGuide("satyanarayan")}
             onOpenStories={() => setTab("Stories")}
           />
         ) : tab === "Festivals" ? (
@@ -111,6 +135,7 @@ export default function App() {
               if (next) setHousehold(next);
             }}
             onOpenDiwali={() => setGuide("diwali")}
+            onOpenCeremony={() => setGuide("satyanarayan")}
           />
         ) : tab === "Read" ? (
           <Read />

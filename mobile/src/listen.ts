@@ -49,8 +49,15 @@ const catalog = (catalogFile as CatalogFile).verses ?? {};
 const gitaUriCache = new Map<number, string>();
 
 export const LISTEN_MISSING = "The chant for this verse is not on the phone yet.";
+export const LISTEN_WAIT = "Please wait. Getting the chant.";
 export const LISTEN_FAILED = "The chant could not be opened on this device.";
 export const CHANT_RATE = 1.15;
+export const SPOKEN_RATE = 0.82;
+
+function chantRate(verse: Verse, row?: CatalogRow) {
+  if (verse.book === "gita" && row?.kind !== "spoken") return CHANT_RATE;
+  return SPOKEN_RATE;
+}
 
 export function listenRow(verse: Verse): CatalogRow | undefined {
   return catalog[verse.ref];
@@ -111,7 +118,7 @@ export async function resolveListenClip(verse: Verse): Promise<ListenClip | unde
     row?.words ?? [],
     row?.source,
     chantAsset,
-    verse.book === "gita" ? CHANT_RATE : 1,
+    chantRate(verse, row),
   );
   if (!chant && verse.book === "gita") {
     const offset = row?.hfOffset;
@@ -124,7 +131,7 @@ export async function resolveListenClip(verse: Verse): Promise<ListenClip | unde
       words: row?.words ?? [],
       source: row?.source || "JDhruv14/Bhagavad-Gita_Audio",
       uri,
-      rate: CHANT_RATE,
+      rate: chantRate(verse, row),
     };
   }
   if (!chant) return undefined;

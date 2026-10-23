@@ -7,6 +7,7 @@ export const STORE_KEYS = {
   opens: "setuhome-read-opens",
   continue: "setuhome-continue",
   prep: "setuhome-diwali-prep",
+  ceremony: "setuhome-satyanarayan-step",
 } as const;
 
 const memory = new Map<string, string>();

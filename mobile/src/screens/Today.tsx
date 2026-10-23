@@ -18,6 +18,7 @@ type Props = {
   morningLabel?: string;
   reminder?: ReminderState;
   onOpenDiwali: () => void;
+  onOpenCeremony: () => void;
   onOpenStories: () => void;
 };
 
@@ -43,7 +44,7 @@ function previewMark(): Mark | null {
   return MARKS.includes(value as Mark) ? (value as Mark) : null;
 }
 
-export function Today({ household, morningLabel, reminder, onOpenDiwali, onOpenStories }: Props) {
+export function Today({ household, morningLabel, reminder, onOpenDiwali, onOpenCeremony, onOpenStories }: Props) {
   const now = new Date();
   const calendar = useMemo(
     () => calendarForHousehold(household, new Date(), false),
@@ -153,6 +154,16 @@ export function Today({ household, morningLabel, reminder, onOpenDiwali, onOpenS
           <Text style={styles.momentBody}>The monkey and the crocodile, for the end of the day.</Text>
         </Pressable>
       </View>
+      <Pressable
+        style={styles.ceremony}
+        onPress={onOpenCeremony}
+        accessibilityRole="button"
+        accessibilityLabel="Open Home Satyanarayan"
+      >
+        <Text style={styles.momentKicker}>Ceremony</Text>
+        <Text style={styles.momentTitle}>Home Satyanarayan</Text>
+        <Text style={styles.momentBody}>Six steps at home. Next and previous always work.</Text>
+      </Pressable>
     </ScrollView>
       {showStreak ? <Streak count={days} city={city} celebrated={hit} onClose={closeStreak} /> : null}
     </View>
@@ -330,6 +341,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     lineHeight: 24,
     color: theme.ink,
+  },
+  ceremony: {
+    marginTop: 10,
+    backgroundColor: theme.surface,
+    borderRadius: 18,
+    borderWidth: 1,
+    borderColor: theme.line,
+    padding: 14,
   },
   momentBody: {
     marginTop: 4,
